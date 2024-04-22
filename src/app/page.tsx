@@ -7,7 +7,7 @@ import Career from './components/layout/Career';
 import Gallery from './components/layout/Gallery';
 import Contacts from './components/layout/Contacts';
 import Slider from './components/layout/Slider';
-import Carousel from './components/layout/Carousel';
+import Carus from './components/layout/Carus';
 
 
 export default function Home() {
@@ -22,8 +22,7 @@ export default function Home() {
       <Career />
       <Gallery />
       <Contacts />
-      <Slider /> 
-      <Carousel />    
+      <Carus />
     </>
   );
 }

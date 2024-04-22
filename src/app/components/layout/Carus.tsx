@@ -15,6 +15,8 @@ export default function Carus() {
 
   const [activeSlideIndex, setActiveSlideIndex] = useState(1);
 
+  console.log(`activeSlideIndex ${activeSlideIndex}`);
+
   const handleSlideChange = (swiper: any) => {
     console.log(swiper.realIndex);
     const activeSlide = swiper.slides[swiper.activeIndex];

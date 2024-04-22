@@ -1,5 +1,6 @@
 interface Service {
-    id: number;    
+    id: number;
+    backgroundImage: string;   
     number: string; 
     month: string;
     src: string;
@@ -11,6 +12,7 @@ interface Service {
 const services: Service[] = [
     { 
         id: 1, 
+        backgroundImage: "/bg-services-1.png",
         number: '01', 
         month: '05', 
         src: "/photos/photo-ATVs.png", 
@@ -20,6 +22,7 @@ const services: Service[] = [
     },
     { 
         id: 2, 
+        backgroundImage: "/bg-services-2.png",
         number: '02', 
         month: '05', 
         src: "/photos/photo-rock-climbing.png", 
@@ -29,6 +32,7 @@ const services: Service[] = [
     },
     { 
         id: 3, 
+        backgroundImage: "/bg-services-3.png",
         number: '03', 
         month: '05', 
         src: "/photos/photo-ballooning.png", 
@@ -38,6 +42,7 @@ const services: Service[] = [
     },
     { 
         id: 4, 
+        backgroundImage: "/bg-services-4.png",
         number: '04', 
         month: '05', 
         src: "/photos/photo-skydiving.png", 
@@ -46,7 +51,8 @@ const services: Service[] = [
         description: 'Fly in the sky over the Carpathians! Experienced instructors will help you realize your dream of free flight. Remember the incredible emotions and panoramas from a bird`s eye view forever.'
     },
     { 
-        id: 5, 
+        id: 5,
+        backgroundImage: "/bg-services-5.png", 
         number: '05', 
         month: '05', 
         src: "/photos/photo-rafting.png", 

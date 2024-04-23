@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-// import Image from 'next/image';
+import { nanoid } from 'nanoid';
 import services from '../../../../shared/services';
 
 interface ServiceCardProps {
@@ -64,10 +64,10 @@ export default function ServiceCard({ elementNumber }: ServiceCardProps) {
             alt={selectedService.alt}
           />
         </div>
-        <div className="md:w-1/3 lg:w-2/4 flex flex-col justify-between">
-          <div className="relative flex flex-col lg:justify-between h-full">
+        <div className="relative md:w-1/3 lg:w-2/4 flex flex-col justify-between">
+          <div className="flex flex-col lg:justify-between h-full">
             {offers.map((offer, index) => (
-              <div className='lg:flex items-center justify-between'>
+              <div key={nanoid()} className='lg:flex items-center justify-between'>
                 <div
                   className="lg:w-1/2 flex"
                   key={index}
@@ -93,7 +93,7 @@ export default function ServiceCard({ elementNumber }: ServiceCardProps) {
                     </div>
                   </div>
                 </div>
-                <div className="absolute bottom-10 lg:static lg:w-1/2 items-center font-thin text-[12px] filter brightness-50">
+                <div className="absolute bottom-40 lg:static lg:w-1/2 items-center md:text-sm  font-thin lg:text-xs filter brightness-50">
                   {index === selectedOfferIndex && (
                     <p>{selectedService.slogan}</p>
                   )}

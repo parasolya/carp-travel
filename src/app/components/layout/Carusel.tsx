@@ -2,7 +2,6 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
@@ -17,14 +16,14 @@ export default function Carusel() {
 
   useEffect(() => {
     if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slideTo(1, 0); 
+      swiperRef.current.swiper.slideTo(1, 0);
     }
   }, []);
 
   return (
     // <div className="px-4 py-4 mx-auto">
     <>
-       <Swiper
+      <Swiper
         effect={'coverflow'}
         grabCursor={true}
         centeredSlides={true}
@@ -38,11 +37,10 @@ export default function Carusel() {
           modifier: -10,
         }}
         pagination={{ el: '.swiper-pagination', clickable: true }}
-        navigation={true }
+        navigation={true}
         modules={[EffectCoverflow, Navigation]}
         className="swiper_container"
       >
-      
         <SwiperSlide>
           <img
             // className="w-100 h-42 rounded-2 object-cover"
@@ -70,7 +68,7 @@ export default function Carusel() {
           <div className="text-black">Next</div>
           <div className="relative w-15 !important mb-1"></div>
         </div> */}
-{/* 
+        {/* 
 <div className="swiper-navigation flex justify-center items-center mt-4">
     <button className="swiper-button-prev bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold py-2 px-4 rounded-l"
  onClick={() => swiperRef.current && swiperRef.current.slidePrev()}
@@ -83,8 +81,6 @@ export default function Carusel() {
       Next
     </button>
   </div> */}
-
-
       </Swiper>
       {/* </div> */}
     </>

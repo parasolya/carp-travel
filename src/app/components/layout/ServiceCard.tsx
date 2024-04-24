@@ -46,7 +46,7 @@ export default function ServiceCard({ elementNumber }: ServiceCardProps) {
       }}
     >
       <div className="flex items-center md:mb-8 lg:mb-4">
-        <h1 className="md:w-2/3 lg:w-1/2 font-thin md:text-7xl lg:text-8xl tracking-tight leading-none">
+        <h1 className="md:w-2/3 lg:w-1/2 font-thin md:text-7xl lg:text-8xl tracking-tight leading-none uppercase">
           WE <span className="font-medium">OFFER</span>
         </h1>
         <p className="md:w-1/3 lg:ml-4 font-thin md:text-7xl lg:text-8xl tracking-tight">
@@ -93,7 +93,7 @@ export default function ServiceCard({ elementNumber }: ServiceCardProps) {
                     </div>
                   </div>
                 </div>
-                <div className="absolute bottom-40 lg:static lg:w-1/2 items-center md:text-sm  font-thin lg:text-xs filter brightness-50">
+                <div className="absolute bottom-40 lg:static lg:w-1/2 items-center md:text-sm  font-thin lg:text-xs">
                   {index === selectedOfferIndex && (
                     <p>{selectedService.slogan}</p>
                   )}
@@ -102,7 +102,7 @@ export default function ServiceCard({ elementNumber }: ServiceCardProps) {
             ))}
           </div>
 
-          <div className="lg:w-1/2 md:text-sm lg:text-base font-thin lg:ml-auto filter brightness-50 lg:mt-2">
+          <div className="lg:w-1/2 md:text-sm lg:text-base font-thin lg:ml-auto lg:mt-2">
             <p>{selectedService.description}</p>
           </div>
         </div>

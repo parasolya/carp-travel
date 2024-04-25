@@ -20,7 +20,8 @@ export default function Career() {
           talented professionals to share our common mission.
         </p>
       </div>
-      <div className="lg:h-full lg:grid grid-cols-2 gap-4 lg:mt-6">
+      
+      <div className="lg:h-full flex justify-between gap-4 lg:mt-6">
         <WhyUs array={advantages} />
         <FormChooseUs />
       </div>

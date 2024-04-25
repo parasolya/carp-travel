@@ -17,7 +17,7 @@ const config: Config = {
       screens: {
         sm: "320px",
         md: "768px",
-        lg: "1440px",
+        lg: "1280px",
       },
       variants: {
         filter: ['responsive', 'hover', 'focus'], // додайте 'filter' до варіантів

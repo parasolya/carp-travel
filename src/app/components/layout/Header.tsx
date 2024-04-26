@@ -6,7 +6,7 @@ import Logo from './icons/Logo';
 export default function Header() {
   return (
     <>
-      <header className="absolute flex items-center justify-between bg-primary text-white">
+      <header className="box-border absolute flex items-center justify-between bg-primary text-white">
         <Link
           className="text-secondary font-bold"
           // href={'/#hero'}

@@ -24,6 +24,35 @@ const FormChooseUs = () => {
 
   const [inputValue, setInputValue] = useState('+38 ');
 
+  const [isPhonePlaceholder, setisPhonePlaceholder] = useState<boolean>(true);
+  const [formattedValue, setFormattedValue] = useState('');
+
+  // const formatValue = (value: any) => {
+  //   if (value.length === 10) {
+  //     return (
+  //       '(' +
+  //       value.substring(0, 3) +
+  //       ') ' +
+  //       value.substring(3, 5) +
+  //       ' ' +
+  //       value.substring(5, 7) +
+  //       ' ' +
+  //       value.substring(7) +
+  //       ' '
+  //     );
+  //   }
+  //   return value;
+  // };
+
+    //   const inputRef = useRef<HTMLInputElement>(null);
+
+  //   useEffect(() => {
+  //     if (inputRef.current) { // Перевірка, чи існує inputRef.current перед використанням
+  //       inputRef.current.focus();
+  //       inputRef.current.setSelectionRange(inputRef.current.value.length, inputRef.current.value.length);
+  //     }
+  //   }, []);
+
 //   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 //     let value = event.target.value;
 //     console.log(value);
@@ -195,39 +224,57 @@ const FormChooseUs = () => {
               {...register('Position')}
             />
           </div>
-          <div
-          // className={css.inputWrapper}
-          >
-            <input
-              className="bg-black"
-              // className={`${css.input} ${
-              //   errors.discordUsername ? css.error : ""
-              // } ${isDiscordUsernameFilled ? css.filled : ""}`}
-              type="text"
-              
-            //   onChange={(e) => {
-            //     handleChange(e);
-                
-            //   }}
-            defaultValue='+38 '
-              placeholder="(097) 12 34 567"
-              {...register('phone', {
-                required: true,
-                maxLength: 10,
-                pattern: /^\+38\s\(\d{3}\)\s\d{2}\s\d{2}\s\d{3}$/,
-                // value: inputValue, 
-              })}
-              ref={inputRef}
-            />
-            {errors.phone && (
-              <p style={{ visibility: 'visible' }}>
-                {errors.phone.type === 'required' && 'This field is required.'}
-                {errors.phone.type === 'pattern' && '❌ Incorrect phone'}
-                {errors.phone.type === 'maxLength' &&
-                  'Max length is 10 characters.'}
-              </p>
-            )}
-          </div>
+          <div>
+                <label
+                  htmlFor="phone"
+                  className="block font-thin text-xs tracking-widest tracking-6 mb-2"
+                >
+                  Phone
+                </label>
+                <div className="w-full flex items-center overflow-hidden">
+                  <div className="block whitespace-nowrap text-center md:font-thin lg:font-extralight md:text-xs lg:text-xl leading-6 py-1 pl-2 bg-white bg-opacity-5">
+                    + 38
+                  </div>
+                  <input
+                    id="phone"
+                    className="flex-1 py-1 pl-2 Inter font-extralight md:text-xs lg:text-xl leading-6 placeholder-white placeholder-opacity-20 bg-white bg-opacity-5 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer"
+                    //   ref={inputRef}
+                    type="text"
+                    placeholder="(097) 12 34 567"
+                    {...register('phone', {
+                      required: true,
+                      maxLength: 20,
+                      pattern: /^\+\s38\s\(\d{3}\)\s\d{2}\s\d{2}\s\d{3}$/,
+                    })}
+                    // onChange={(event) => {
+                    //   const value = event.target.value;
+                    //   if (value !== '+ 38 ') {
+                    //     console.log('зміна value');
+                    //     setisPhonePlaceholder(false);
+                    //   }
+
+                    //   setFormattedValue(formatValue(value));
+                    //   console.log(value);
+                    //   console.log(errors.phone);
+                    // }}
+                    // value={formattedValue}
+                  />
+                  {errors.phone && (
+                    <p style={{ visibility: 'visible' }}>
+                      {errors.phone &&
+                        errors.phone.type === 'required' &&
+                        'This field is required.'}
+                      {errors.phone &&
+                        errors.phone.type === 'maxLength' &&
+                        'Max length is 20 characters.'}
+                      {errors.phone &&
+                        errors.phone.type === 'pattern' &&
+                        '❌ Incorrect pattern'}
+                    </p>
+                  )}
+                </div>
+              </div>
+            {/* </div> */}
 
           <button
             // className={css.btnSubmit}

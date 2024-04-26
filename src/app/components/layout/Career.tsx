@@ -8,7 +8,7 @@ export default function Career() {
   return (
     <section
       id="career"
-      className="h-screen bg-cover bg-center md:px-8 md:py-16 lg:px-20 lg:py-16 flex flex-col justify-between"
+      className="box-border h-screen bg-cover bg-center md:px-8 md:py-16 lg:px-20 lg:py-16 flex flex-col justify-between"
       style={{ backgroundImage: 'url(/bg-career.png)' }}
     >
       <div className="flex items-center md:mb-8 lg:mb-4">

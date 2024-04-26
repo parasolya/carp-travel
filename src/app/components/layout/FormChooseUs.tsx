@@ -4,6 +4,8 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { useRef, useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
+// const inputError = 'text-primary'
+
 const FormChooseUs = () => {
   const {
     handleSubmit,
@@ -15,7 +17,9 @@ const FormChooseUs = () => {
   } = useForm();
 
   const [isChecked, setIsChecked] = useState(false);
-  const isMediumScreen = useMediaQuery({ query: '(min-width: 768px) and (max-width: 1279px)' });
+  const isMediumScreen = useMediaQuery({
+    query: '(min-width: 768px) and (max-width: 1279px)',
+  });
 
   const [isPhonePlaceholder, setisPhonePlaceholder] = useState<boolean>(true);
   const [formattedValue, setFormattedValue] = useState('');
@@ -23,22 +27,6 @@ const FormChooseUs = () => {
   const handleChange = () => {
     setIsChecked(!isChecked);
   };
-  // const formatValue = (value: any) => {
-  //   if (value.length === 10) {
-  //     return (
-  //       '(' +
-  //       value.substring(0, 3) +
-  //       ') ' +
-  //       value.substring(3, 5) +
-  //       ' ' +
-  //       value.substring(5, 7) +
-  //       ' ' +
-  //       value.substring(7) +
-  //       ' '
-  //     );
-  //   }
-  //   return value;
-  // };
 
   const [isSubmitSuccess, setIsSubmitSuccess] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -58,8 +46,6 @@ const FormChooseUs = () => {
     }
   }, [watch('discordUsername'), watch('walletAddress')]);
 
-  //   onSubmit: SubmitHandler<FormValues>
-
   const onSubmit = async (e: any) => {
     const isValid = await trigger();
     if (isValid) {
@@ -71,15 +57,6 @@ const FormChooseUs = () => {
       }, 1000);
     }
   };
-
-  //   const inputRef = useRef<HTMLInputElement>(null);
-
-  //   useEffect(() => {
-  //     if (inputRef.current) { // Перевірка, чи існує inputRef.current перед використанням
-  //       inputRef.current.focus();
-  //       inputRef.current.setSelectionRange(inputRef.current.value.length, inputRef.current.value.length);
-  //     }
-  //   }, []);
 
   return (
     <div className="h-full md:w-2/3 lg:w-1/2 md:mt-16 lg:mt-0">
@@ -93,7 +70,7 @@ const FormChooseUs = () => {
         <div className="flex flex-col justify-between gap-4">
           <div className="flex justify-between gap-4">
             <div className="w-1/2 h-50 flex flex-col gap-4">
-              <div>
+            <div className='relative'>
                 <label
                   htmlFor="name"
                   className="block font-thin text-xs tracking-widest mb-2"
@@ -101,8 +78,8 @@ const FormChooseUs = () => {
                   Full name
                 </label>
                 <input
-                  className="w-full bg-white bg-opacity-5 py-1 pl-2 
-              Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-xl leading-6 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer"
+                  className={`w-full bg-white bg-opacity-5 py-1 pl-2 
+              Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-xl leading-6 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer ${errors.name ? 'text-primary' : ''}`}
                   id="name"
                   type="text"
                   placeholder="John Smith"
@@ -113,21 +90,21 @@ const FormChooseUs = () => {
                   })}
                 />
                 {errors.name && (
-                  <p style={{ visibility: 'visible' }}>
+                  <p className='absolute right-0 font-thin text-xs tracking-widest tracking-6 text-primary' style={{ visibility: 'visible' }}>
                     {errors.name &&
                       errors.name.type === 'required' &&
-                      'This field is required.'}
+                      '❌ This field is required.'}
                     {errors.name &&
                       errors.name.type === 'maxLength' &&
-                      'Max length is 20 characters.'}
+                      '❌ Max length is 20 characters.'}
                     {errors.name &&
                       errors.name.type === 'pattern' &&
-                      '&#10060; Incorrect name'}
+                      '❌ Incorrect name'}
                   </p>
                 )}
               </div>
 
-              <div>
+              <div className='relative'>
                 <label
                   htmlFor="email"
                   className="block font-thin text-xs tracking-widest tracking-6 mb-2"
@@ -136,8 +113,8 @@ const FormChooseUs = () => {
                 </label>
                 <input
                   id="email"
-                  className="w-full bg-white bg-opacity-5 py-1 pl-2 
-                Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-xl leading-6 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer"
+                  className={`w-full bg-white bg-opacity-5 py-1 pl-2 
+                Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-xl leading-6 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer ${errors.name ? 'text-primary' : ''}`}
                   type="text"
                   placeholder="johnsmith@email.com"
                   {...register('email', {
@@ -146,13 +123,13 @@ const FormChooseUs = () => {
                   })}
                 />
                 {errors.email && (
-                  <p style={{ visibility: 'visible' }}>
+                  <p className='absolute right-0 font-thin text-xs tracking-widest tracking-6 text-primary' style={{ visibility: 'visible' }}>
                     {errors.email &&
                       errors.email.type === 'required' &&
-                      'This field is required.'}
+                      '❌ This field is required.'}
                     {errors.email &&
                       errors.email.type === 'pattern' &&
-                      '&#10060; Invalid email'}
+                      '❌ Incorrect email'}
                   </p>
                 )}
               </div>
@@ -172,7 +149,7 @@ const FormChooseUs = () => {
                   {...register('Position')}
                 />
               </div>
-              <div>
+              <div className='relative'>
                 <label
                   htmlFor="phone"
                   className="block font-thin text-xs tracking-widest tracking-6 mb-2"
@@ -185,7 +162,7 @@ const FormChooseUs = () => {
                   </div>
                   <input
                     id="phone"
-                    className="flex-1 py-1 pl-2 Inter font-extralight md:text-xs lg:text-xl leading-6 placeholder-white placeholder-opacity-20 bg-white bg-opacity-5 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer"
+                    className={`flex-1 py-1 pl-2 Inter font-extralight md:text-xs lg:text-xl leading-6 placeholder-white placeholder-opacity-20 bg-white bg-opacity-5 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer ${errors.name ? 'text-primary' : ''}`}
                     //   ref={inputRef}
                     type="text"
                     placeholder="(097) 12 34 567"
@@ -194,30 +171,18 @@ const FormChooseUs = () => {
                       maxLength: 20,
                       pattern: /^\+\s38\s\(\d{3}\)\s\d{2}\s\d{2}\s\d{3}$/,
                     })}
-                    // onChange={(event) => {
-                    //   const value = event.target.value;
-                    //   if (value !== '+ 38 ') {
-                    //     console.log('зміна value');
-                    //     setisPhonePlaceholder(false);
-                    //   }
-
-                    //   setFormattedValue(formatValue(value));
-                    //   console.log(value);
-                    //   console.log(errors.phone);
-                    // }}
-                    // value={formattedValue}
                   />
                   {errors.phone && (
-                    <p style={{ visibility: 'visible' }}>
+                    <p className='absolute right-0 -bottom-4 font-thin text-xs tracking-widest tracking-6 text-primary' style={{ visibility: 'visible' }}>
                       {errors.phone &&
                         errors.phone.type === 'required' &&
-                        'This field is required.'}
+                        '❌ This field is required.'}
                       {errors.phone &&
                         errors.phone.type === 'maxLength' &&
-                        'Max length is 20 characters.'}
+                        '❌ Max length is 20 characters.'}
                       {errors.phone &&
                         errors.phone.type === 'pattern' &&
-                        '❌ Incorrect pattern'}
+                        '❌ Incorrect phone'}
                     </p>
                   )}
                 </div>
@@ -234,21 +199,13 @@ const FormChooseUs = () => {
               <textarea
                 className="block resize-none w-full py-1 px-2 font-extralight text-xl leading-6 bg-white bg-opacity-5 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer"
                 // rows={isMediumScreen ? 8 : 10}
-              rows={10}
+                rows={10}
               ></textarea>
             </div>
           </div>
-          <div className='flex gap-4'>
+          <div className="flex gap-4">
             <div className="md:w-1/2 lg:w-full flex gap-2 lg:mt-2 ">
               <label className="h-6 w-6 flex flex-shrink-0 items-center justify-center  border border-white cursor-pointer">
-                {/* <input
-                  type="checkbox"
-                  // className="form-checkbox h-6 w-6 border border-gray-300 flex items-center justify-center bg-transparent rounded checked:bg-black checked:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-500 cursor-pointer"
-                  className="appearance-none h-4 w-4 flex-shrink-0 bg-white bg-opacity-5 border-none checked:bg-white checked:border-transparent focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 focus:ring-transparent cursor-pointer"
-                  checked={isChecked}
-                  onClick={() => setIsChecked(!isChecked)}
-                /> */}
-                {/* < className="inline-flex items-center cursor-pointer"> */}
                 <input
                   type="checkbox"
                   className="hidden appearance-none"
@@ -292,5 +249,3 @@ const FormChooseUs = () => {
 };
 
 export default FormChooseUs;
-
-// focus:border-blue-500 focus:ring-blue-500 focus:ring-offset-blue-200 focus:ring-2 focus:outline-none transition-colors duration-300

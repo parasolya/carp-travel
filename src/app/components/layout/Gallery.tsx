@@ -5,7 +5,7 @@ import Carousel from './Carousel';
 
 function Gallery() {
   return (
-    <section id='gallery' className="h-screen py-20 px-4 flex-col items-center justify-center bg-cover bg-center" style={{backgroundImage: 'url(/bg-gallery.png)'}}>
+    <section id='gallery' className="box-border h-screen py-20 px-4 flex-col items-center justify-center bg-cover bg-center" style={{backgroundImage: 'url(/bg-gallery.png)'}}>
     <h1 className='ml-4 font-thin text-[98px] tracking-tight'>OUR <span className='font-medium'>GALLERY</span></h1>
     
     <Carousel />  

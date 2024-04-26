@@ -11,7 +11,7 @@ import Slider from './Slider';
 
 function Services() {
   return (
-    <section id="services" className="h-screen">
+    <section id="services" className="h-screen box-border">
       <h1 className="hidden">Services</h1>
       <Slider count={5} />  
     </section>

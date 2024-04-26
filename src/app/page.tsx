@@ -5,7 +5,7 @@ import About from './components/layout/About';
 import Services from './components/layout/Services';
 import Career from './components/layout/Career';
 import Gallery from './components/layout/Gallery';
-import Contacts from './components/layout/Contacts';
+import ContactUs from './components/layout/ContactUs';
 import Slider from './components/layout/Slider';
 import Carus from './components/layout/Carus';
 
@@ -21,7 +21,7 @@ export default function Home() {
       <Services />
       <Career />
       <Gallery />
-      <Contacts />
+      <ContactUs />
       <Carus />
     </>
   );

@@ -41,9 +41,9 @@ export default function Header() {
     <>
       <header className="relative bg-yellow-500">
         {!isMobileMenuVisible && (
-          <div className="absolute bg-primary flex items-center justify-between">
+          <div className="absolute w-full flex justify-between box-border mx-auto px-8 pt-6 lg:px-20">
             <Link
-              className="text-secondary font-bold"
+              className="font-bold"
               // href={'/#hero'}
               activeClass="active"
               to="hero"
@@ -54,7 +54,7 @@ export default function Header() {
             >
               <img src="/logo.png" width={61} height={34} alt="logo" />
             </Link>
-            <nav className="flex items-center justify-between gap-4">
+            <nav className="flex items-end lg:items-center justify-between gap-6 lg:gap-8">
               <Link
                 activeClass="active"
                 to="about"

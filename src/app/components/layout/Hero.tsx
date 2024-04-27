@@ -6,30 +6,30 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="box-border mx-auto px-5 py-20 md:px-8 md:pb-16 pt-27 md:pt-36 lg:px-20 lg:pb-16 bg-cover bg-center"
+      className="box-border lg:h-screen mx-auto px-5 py-20 md:px-8 md:pb-16 pt-27 md:pt-36 lg:px-20 lg:pb-16 bg-cover bg-center"
       style={{ backgroundImage: 'url(/bg-hero.png)' }}
     >
-      <div className="w-full h-full box-border flex flex-col">
-        <div className="relative mb-60 md:mb-20">
+      <div className="w-full h-full flex flex-col">
+        <div className="md:flex-grow relative md:h-1/3 mb-60 md:mb-10 lg:mb-20">
           <div className="absolute top-20 md:-top-1 w-2/3 md:w-2/3">
-            <h1 className="lg:w-3/4 font-medium text-5xl md:text-[67px] lg:text-8xl leading-tight tracking-tight uppercase">
+            <h1 className=" font-medium text-5xl md:text-[67px] lg:text-[98px] leading-tight tracking-tight uppercase">
               Uncover <span className="font-thin">Carpathian’s Secrets</span>
             </h1>
           </div>
           <div className="w-full flex justify-end">
-            <div className="w-3/7">
-              <h2 className="font-medium text-[37px] md:text-7xl lg:text-8xl tracking-tight leading-none uppercase">
-                7 <span className="font-thin ">DAYS</span>
+            <div className="w-3/7 md:w-1/3">
+              <h2 className="font-medium text-[37px] md:text-7xl lg:text-[98px] tracking-tight leading-none uppercase">
+                7 <span className="font-thin lg:tracking-widest">DAYS</span>
               </h2>
-              <p className="-mt-1 font-thin tracking-[0.6em] md:tracking-[1.5em]">
+              <p className="-mt-1 font-thin tracking-[0.6em] md:tracking-[1.5em] lg:tracking-[2.3em]">
                 JOURNEY
               </p>
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-8 md:flex-row justify-between">
-          <div className="md:w-1/3 md:flex flex-col justify-end">
-            <p className="md:text-xs font-thin md:leading-5 lg:leading-6">
+        <div className="md:flex-grow flex flex-col gap-8 md:flex-row justify-between">
+          <div className="w-2/3 md:w-1/3 md:flex flex-col justify-end lg:w-2/3">
+            <p className="text-xs font-thin md:leading-5 lg:leading-6 md:tracking-widest">
               Hoverla / Yaremche / Zakarpattia / Vorokhta / Synevyr Lake /
               Bukovel
             </p>
@@ -45,13 +45,13 @@ export default function Hero() {
             <Link
               className="cursor-pointer"
               activeClass="active"
-              to="career"
+              to="contacts"
               spy={true}
               smooth={true}
               offset={0}
               duration={500}
             >
-              <div className="relative w-full h-[50px] flex bg-white bg-opacity-10">
+              <div className="relative w-full h-[53px] md:h-[50px] lg:h-[71px] flex bg-white bg-opacity-10 focus:bg-opacity-20 hover:bg-opacity-20">
                 <div className="box-border h-full w-1/6 ">
                   <div className="h-1/6 border-t border-l border-white"></div>
                   <div className="h-4/6"></div>

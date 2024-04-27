@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
-// import Logo from './icons/Logo';
+import Logo from './Logo';
 
 export default function Header() {
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
@@ -13,12 +13,12 @@ export default function Header() {
       setIsMobileMenuVisible(window.innerWidth <= 767);
     };
 
-    handleResize(); 
+    handleResize();
 
-    window.addEventListener('resize', handleResize); 
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize); 
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -42,18 +42,7 @@ export default function Header() {
       <header className="relative bg-yellow-500">
         {!isMobileMenuVisible && (
           <div className="absolute w-full flex justify-between box-border mx-auto px-8 pt-6 lg:px-20">
-            <Link
-              className="font-bold"
-              // href={'/#hero'}
-              activeClass="active"
-              to="hero"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={500}
-            >
-              <img src="/logo.png" width={61} height={34} alt="logo" />
-            </Link>
+            <Logo />
             <nav className="flex items-end lg:items-center justify-between gap-6 lg:gap-8">
               <Link
                 activeClass="active"
@@ -109,31 +98,125 @@ export default function Header() {
           </div>
         )}
 
-        {/* MOBILE MENU MODAL */}
+        {/* MOBILE HEADER */}
 
         {!isMenuToggled && isMobileMenuVisible && (
           <div
             id="navbar"
             className="w-full absolute top-0 left-1/2 transform -translate-x-1/2 z-30  box-border pt-8 px-5"
-          >            
-              <div
-                className="w-full flex justify-between items-center"
-                onClick={() => setIsMenuToggled(!isMenuToggled)}
-              >
-                <img src="/logo.png" width={61} height={34} alt="logo" />
+          >
+            <div
+              className="w-full flex justify-between items-center"
+              onClick={() => setIsMenuToggled(!isMenuToggled)}
+            >
+              <Logo />
 
+              <div>
                 <div>
-                  <div>
-                    <button
-                      className="pointer-events-auto uppercase"
-                      onClick={() => setIsMenuToggled(!isMenuToggled)}
-                    >
-                      menu
-                    </button>
-                  </div>
+                  <button
+                    className="pointer-events-auto uppercase"
+                    onClick={() => setIsMenuToggled(!isMenuToggled)}
+                  >
+                    menu
+                  </button>
                 </div>
               </div>
-           
+            </div>
+          </div>
+        )}
+
+        {/* MOBILE MENU MODAL */}
+
+        {isMenuToggled && isMobileMenuVisible && (
+          <div
+            id="navbar"
+            className="w-full h-screen absolute top-0 left-1/2 transform -translate-x-1/2 z-30  box-border pt-8 px-5 bg-gray-900 bg-opacity-90"
+          >
+            <div
+              className="w-full flex justify-end items-center"
+              onClick={() => setIsMenuToggled(!isMenuToggled)}
+            >
+              <div>
+                <div>
+                  <button
+                    className="pointer-events-auto uppercase"
+                    onClick={() => setIsMenuToggled(!isMenuToggled)}
+                  >
+                    CLOSE
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* MENU ITEMS */}
+
+            <div
+              className="h-full w-full flex flex-col items-center text-center"
+              onClick={() => setIsMenuToggled(!isMenuToggled)}
+            >
+              <div className="flex flex-col gap-12 pt-32">
+                <Link
+                  className="text-xl"
+                  activeClass="active"
+                  to="about"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                  onClick={() => setIsMenuToggled(!isMenuToggled)}
+                >
+                  About
+                </Link>
+                <Link
+                  className="text-xl"
+                  activeClass="active"
+                  to="services"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                  onClick={() => setIsMenuToggled(!isMenuToggled)}
+                >
+                  Services
+                </Link>
+                <Link
+                  className="text-xl"
+                  activeClass="active"
+                  to="career"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                  onClick={() => setIsMenuToggled(!isMenuToggled)}
+                >
+                  Career
+                </Link>
+                <Link
+                  className="text-xl"
+                  activeClass="active"
+                  to="gallery"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                  onClick={() => setIsMenuToggled(!isMenuToggled)}
+                >
+                  Gallery
+                </Link>
+                <Link
+                  className="text-xl"
+                  activeClass="active"
+                  to="contacts"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={500}
+                  onClick={() => setIsMenuToggled(!isMenuToggled)}
+                >
+                  Contacts
+                </Link>
+              </div>
+            </div>
           </div>
         )}
       </header>

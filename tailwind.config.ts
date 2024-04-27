@@ -13,6 +13,7 @@ const config: Config = {
         "primary": "#FF5757",
         "secondary": "#9747FF",
         "gray-700": "#020F08",
+        "gray-900": "#010A05"
       },
       screens: {
         sm: "320px",

@@ -5,7 +5,7 @@ function About() {
   return (
     <section
       id="about"
-      className="box-border md:h-screen mx-auto px-10 py-20 md:px-8 md:py-16 lg:px-20 lg:py-16  flex flex-col justify-center bg-cover bg-center"
+      className="box-border md:h-screen mx-auto px-5 py-16 md:px-8 md:py-16 lg:px-20 lg:py-16  flex flex-col justify-center bg-cover bg-center"
       style={{ backgroundImage: 'url(/bg-about.png)' }}
     >
       <h1 className="md:w-2/3 lg:w-3/4 mb-4 font-thin text-4xl md:text-7xl lg:text-8xl tracking-tight leading-none uppercase">

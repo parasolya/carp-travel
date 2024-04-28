@@ -6,7 +6,7 @@ import Career from './components/layout/Career';
 import Gallery from './components/layout/Gallery';
 import ContactUs from './components/layout/ContactUs';
 
-import Carus from './components/layout/Carus';
+// import Carus from './components/layout/Carus';
 
 export default function Home() {
   return (
@@ -18,7 +18,6 @@ export default function Home() {
       <Career />
       <Gallery />
       <ContactUs />
-      <Carus />
     </>
   );
 }

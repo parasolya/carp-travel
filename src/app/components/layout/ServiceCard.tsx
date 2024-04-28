@@ -35,31 +35,27 @@ export default function Card2({ elementNumber }: ServiceCardProps) {
         backgroundImage: `url(${selectedService.backgroundImage})`,
       }}
     >
-      <div className="md:flex items-center md:mb-8 lg:mb-4">
-        <div className="md:w-2/3 lg:w-1/2 mb-4 md:mb-0">
-      <Title firstWords='WE' secondWords='OFFER' />
-        {/* <h1 className="md:w-2/3 lg:w-1/2 font-thin md:text-7xl lg:text-8xl tracking-tight leading-none uppercase">
+      <div className="w-full md:flex items-center md:mb-8 lg:mb-4">
+        <h1 className="md:w-2/3 lg:w-1/2 mb-4 md:mb-0 font-thin text-4xl md:text-7xl lg:text-8xl tracking-tight leading-none md:leading-[80px] lg:leading-[110px] uppercase">
           WE <span className="font-medium">OFFER</span>
-        </h1> */}
-        </div>
-        <p className="md:w-1/3 mb-4 md:mb-0 lg:ml-4 text-end md:text-start font-thin text-4xl md:text-7xl lg:text-8xl tracking-tight">
+        </h1>
+
+        <p className="md:w-1/3 mb-4 md:mb-0 text-end md:text-start font-thin text-4xl md:text-7xl lg:text-8xl tracking-tight md:leading-[80px] lg:leading-[110px]">
           {`${selectedService.number}/`}
-          <span className="filter brightness-50">
-            {selectedService.month}
-          </span>
+          <span className="filter brightness-50">{selectedService.month}</span>
         </p>
       </div>
-      <div className="h-full flex flex-col md:flex-row justify-between gap-16 lg:gap-4 ">
-        <div className="lg:h-[429px] w-full md:w-2/3 lg:w-2/4 ">
+      <div className="h-full flex flex-col md:flex-row justify-between gap-16 md:gap-4 ">
+        <div className="md:h-[370px] lg:h-[429px] w-full md:w-2/3 lg:w-2/4 ">
           <img
             className={`h-full w-full object-cover `}
             src={selectedService.src}
             alt={selectedService.alt}
           />
         </div>
-        <div className="relative lg:h-[429px] w-full md:w-1/3 lg:w-2/4 flex flex-col justify-between lg:gap-4">
-          <div className="h-[160px]  md:h-3/5 w-full">
-            <div className="swiper-pagination w-full flex h-full flex-col gap-1 lg:gap-6">
+        <div className="relative md:h-[370px] lg:h-[429px] w-full md:w-1/3 lg:w-2/4 flex flex-col justify-between lg:gap-4">
+          <div className="h-[160px]  md:h-[185px] w-full">
+            <div className="swiper-pagination w-full flex h-full flex-col gap-1 md:gap-0 lg:gap-6">
               {offers.map((offer, index) => (
                 <div
                   key={nanoid()}
@@ -77,7 +73,7 @@ export default function Card2({ elementNumber }: ServiceCardProps) {
                         <div className="mr-2 text-xs">◆</div>
                       )}
                       <div
-                        className={`lg:pr-6 text-start md:text-xl lg:text-2xl md:line-18 lg:line-24 lg:leading-[24px] uppercase filter ${
+                        className={`md:pr-6 text-start md:text-xl lg:text-2xl md:line-18 lg:line-24 md:leading-[22px] lg:leading-[24px] uppercase filter ${
                           index === selectedOfferIndex
                             ? 'brightness-100'
                             : 'brightness-50'
@@ -101,8 +97,8 @@ export default function Card2({ elementNumber }: ServiceCardProps) {
             </div>
           </div>
 
-          <div className="md:h-1/3 box-border lg:pl-4 lg:w-1/2   lg:ml-auto flex flex-col justify-end">
-            <p className="md:text-sm  lg:-tracking-[0.01em] font-thin lg:leading-[24px]">
+          <div className="md:h-1/3 box-border lg:pl-4 lg:w-1/2 lg:ml-auto flex flex-col justify-end">
+            <p className="md:text-sm  md:-tracking-[0.01em] font-thin lg:leading-[24px]">
               {selectedService.description}
             </p>
           </div>

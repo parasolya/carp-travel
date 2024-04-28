@@ -1,7 +1,5 @@
-// 'use client'
-import { nanoid } from 'nanoid';
-import ServiceCard from './ServiceCard';
-import services from '../../../../shared/services';
+'use client'
+
 import Slider from './Slider';
 
 // const count = 5; 

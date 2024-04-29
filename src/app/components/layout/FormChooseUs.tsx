@@ -17,8 +17,7 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
   } = useForm();
 
   const [isChecked, setIsChecked] = useState(false);
-  const [isPhonePlaceholder, setisPhonePlaceholder] = useState<boolean>(true);
-  const [formattedValue, setFormattedValue] = useState('');
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const isMediumScreen = useMediaQuery({
     query: '(min-width: 768px) and (max-width: 1279px)',
@@ -28,18 +27,14 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
     setIsChecked(!isChecked);
   };
 
-  const [isSubmitSuccess, setIsSubmitSuccess] = useState(false);
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-
   const onSubmit = async (e: any) => {
     const isValid = await trigger();
     if (isValid) {
-      setIsSubmitSuccess(true);
-      alert(e);
+      setShowSuccessMessage(true);
+      reset();
       setTimeout(() => {
-        setShowSuccessMessage(true);
-        reset();
-      }, 1000);
+        setShowSuccessMessage(false);
+      }, 1000); // Попап зникне через 1000 мілісекунд (1 секунда)
     }
   };
 
@@ -171,7 +166,7 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
                     {...register('phone', {
                       required: true,
                       maxLength: 20,
-                      pattern: /^\+\s38\s\(\d{3}\)\s\d{2}\s\d{2}\s\d{3}$/,
+                      pattern: /^\(\d{3}\)\s\d{2}\s\d{2}\s\d{3}$/,
                     })}
                   />
                   {errors.phone && (
@@ -238,11 +233,15 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
       </form>
 
       {showSuccessMessage && (
-        <div>
-          <div>
-            <p>
-              Successfull! <br />
-              You are in!
+        <div className="inset-0 flex items-center justify-center">
+          <div
+            className="w-1/2 md:w-1/3 absolute bottom-14 flex items-center justify-center bg-cover bg-center"
+            style={{
+              backgroundImage: 'url(/bg-hero.png)',
+            }}
+          >
+            <p className="py-8 md:py-12 ml:py-24 text-2xl font-thin">
+              Successfull!
             </p>
           </div>
         </div>

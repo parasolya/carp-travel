@@ -4,9 +4,9 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { useRef, useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
-// const inputError = 'text-primary'
-
-const FormChooseUs = () => {
+const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
+  mobileScreen,
+}) => {
   const {
     handleSubmit,
     register,
@@ -17,12 +17,12 @@ const FormChooseUs = () => {
   } = useForm();
 
   const [isChecked, setIsChecked] = useState(false);
+  const [isPhonePlaceholder, setisPhonePlaceholder] = useState<boolean>(true);
+  const [formattedValue, setFormattedValue] = useState('');
+
   const isMediumScreen = useMediaQuery({
     query: '(min-width: 768px) and (max-width: 1279px)',
   });
-
-  const [isPhonePlaceholder, setisPhonePlaceholder] = useState<boolean>(true);
-  const [formattedValue, setFormattedValue] = useState('');
 
   const handleChange = () => {
     setIsChecked(!isChecked);
@@ -44,16 +44,21 @@ const FormChooseUs = () => {
   };
 
   return (
-    <div className="h-full w-full md:w-2/3 lg:w-1/2 md:mt-12 lg:mt-0">
+    <div
+      className="w-full md:w-2/3 lg:w-1/2 box-border px-5 py-16 md:px-0 md:py-0  md:mt-32 lg:mt-32 bg-cover bg-center"
+      style={{
+        backgroundImage: mobileScreen ? 'url(/bg-career.png)' : '',
+      }}
+    >
       <h2 className="hidden">Form</h2>
-      <div className='flex justify-end md:justify-start'>
-        <h3 className=" w-3/5 md:w-1/2 text-[13px] lg:text-base font-thin mt-1 pr-2 lg:mt-0 md:pr-12 lg:pr-0 mb-8 lg:mb-0 leading-[20px] lg:leading-[24px]">
-          Don't miss your opportunity! <br/> Fill out the form right now and
+      <div className="flex justify-end md:justify-start">
+        <h3 className=" w-3/5 md:w-1/2 text-[13px] lg:text-base font-thin  pr-2 lg:mt-0 md:pr-12 mb-8 lg:mb-3 leading-[20px] lg:leading-[24px]">
+          Don't miss your opportunity! <br /> Fill out the form right now and
           join our team!
         </h3>
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className="lg:mt-2">
-        <div className="flex flex-col justify-between gap-2">
+        <div className="flex flex-col justify-between gap-6 md:gap-4 lg:gap-6">
           <div className="mb-4 md:mb-0 md:flex justify-between md:gap-2 lg:gap-4">
             <div className="w-full md:w-1/2 md:h-50 mb-4 md:mb-0 flex flex-col gap-4">
               <div className="relative">
@@ -161,7 +166,6 @@ const FormChooseUs = () => {
                     className={`flex-1 py-1 lg:py-0 pl-2 Inter font-extralight md:text-xs lg:text-xl leading-6 placeholder-white placeholder-opacity-20 bg-white bg-opacity-5 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer ${
                       errors.name ? 'text-primary' : ''
                     }`}
-                    //   ref={inputRef}
                     type="text"
                     placeholder="(097) 12 34 567"
                     {...register('phone', {
@@ -200,7 +204,6 @@ const FormChooseUs = () => {
               <textarea
                 className="block resize-none w-full py-1 md:py-2 px-2 font-extralight text-xl leading-6 bg-white bg-opacity-5 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer"
                 rows={isMediumScreen ? 8 : 9}
-                // rows={7}
               ></textarea>
             </div>
           </div>
@@ -217,15 +220,14 @@ const FormChooseUs = () => {
                   {isChecked && <div className="w-4 h-4 bg-white"></div>}
                 </div>
               </label>
-              {/* </div> */}
+
               <p className="font-thin text-[12px] md:text-xs leading-loose ">
                 I confirm my consent to the processing of personal data.
               </p>
             </div>
             <div className="flex md:items-start justify-end ml-auto mr-0">
               <button
-                // flex items-start
-                className="md:w-20 md:h-9  text-4xl  md:text-3xl lg:text-lg cursor-pointer"
+                className="md:w-20 md:h-9  text-4xl  md:text-3xl lg:text-3xl cursor-pointer"
                 type="submit"
               >
                 SEND

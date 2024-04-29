@@ -45,7 +45,7 @@ export default function Card2({ elementNumber }: ServiceCardProps) {
           <span className="filter brightness-50">{selectedService.month}</span>
         </p>
       </div>
-      <div className="h-full flex flex-col md:flex-row justify-between gap-16 md:gap-4 ">
+      <div className="flex flex-col md:flex-row justify-between gap-16 md:gap-4 ">
         <div className="md:h-[370px] lg:h-[429px] w-full md:w-2/3 lg:w-2/4 ">
           <img
             className={`h-full w-full object-cover `}

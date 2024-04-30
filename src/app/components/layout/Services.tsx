@@ -2,11 +2,6 @@
 
 import Slider from './Slider';
 
-// const count = 5; 
-
-  // Створіть масив чисел від 1 до count
-  // const numbers = Array.from({ length: count }, (_, index) => index + 1);
-
 function Services() {
   return (
     <section id="services" className="md:h-screen box-border">

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import FormChooseUs from './FormChooseUs';
 import WhyUs from './WhyUs';
 import advantages from '../../../../shared/advantages';
-import Title from './Title';
+
 import { useMediaQuery } from 'react-responsive';
 
 export default function Career() {

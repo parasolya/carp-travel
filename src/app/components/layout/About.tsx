@@ -22,7 +22,7 @@ function About() {
       style={{ backgroundImage: 'url(/bg-about.png)' }}
     >
       <div className="w-full h-full">
-        <div className="md:flex justify-between md:mb-16 lg:mb-0">
+        <div className="md:flex justify-between md:mb-6 lg:mb-0">
           <div className="md:w-2/3 lg:w-1/2 md:flex flex-col justify-between">
             <div className="lg:w-3/4 mb-4">
               <Title firstWords="WHO" secondWords="WE ARE" />

@@ -45,6 +45,7 @@ export default function Header() {
             <Logo />
             <nav className="flex items-end lg:items-center justify-between gap-6 lg:gap-8">
               <Link
+                className="cursor-pointer"
                 activeClass="active"
                 to="about"
                 spy={true}
@@ -55,6 +56,7 @@ export default function Header() {
                 About
               </Link>
               <Link
+              className="cursor-pointer"
                 activeClass="active"
                 to="services"
                 spy={true}
@@ -65,6 +67,7 @@ export default function Header() {
                 Services
               </Link>
               <Link
+              className="cursor-pointer"
                 activeClass="active"
                 to="career"
                 spy={true}
@@ -75,6 +78,7 @@ export default function Header() {
                 Career
               </Link>
               <Link
+              className="cursor-pointer"
                 activeClass="active"
                 to="gallery"
                 spy={true}
@@ -85,6 +89,7 @@ export default function Header() {
                 Gallery
               </Link>
               <Link
+              className="cursor-pointer"
                 activeClass="active"
                 to="contacts"
                 spy={true}
@@ -156,7 +161,7 @@ export default function Header() {
             >
               <div className="flex flex-col gap-12 pt-32">
                 <Link
-                  className="text-xl"
+                  className="text-xl cursor-pointer"
                   activeClass="active"
                   to="about"
                   spy={true}
@@ -168,7 +173,7 @@ export default function Header() {
                   About
                 </Link>
                 <Link
-                  className="text-xl"
+                  className="text-xl cursor-pointer"
                   activeClass="active"
                   to="services"
                   spy={true}
@@ -180,7 +185,7 @@ export default function Header() {
                   Services
                 </Link>
                 <Link
-                  className="text-xl"
+                  className="text-xl cursor-pointer"
                   activeClass="active"
                   to="career"
                   spy={true}
@@ -192,7 +197,7 @@ export default function Header() {
                   Career
                 </Link>
                 <Link
-                  className="text-xl"
+                  className="text-xl cursor-pointer"
                   activeClass="active"
                   to="gallery"
                   spy={true}
@@ -204,7 +209,7 @@ export default function Header() {
                   Gallery
                 </Link>
                 <Link
-                  className="text-xl"
+                  className="text-xl cursor-pointer"
                   activeClass="active"
                   to="contacts"
                   spy={true}

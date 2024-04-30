@@ -8,7 +8,7 @@ type TitleProps = {
 const Title: React.FC<TitleProps> = ({ firstWords, secondWords }) => {
   return (
     <>
-      <h1 className="font-thin text-4xl md:text-7xl lg:text-8xl tracking-tight leading-none uppercase">
+      <h1 className="font-thin text-5xl md:text-7xl lg:text-8xl tracking-tight leading-none uppercase">
         {firstWords}{' '}
         <span className="font-medium ">{secondWords}</span>
       </h1>

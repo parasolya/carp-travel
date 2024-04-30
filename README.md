@@ -16,14 +16,14 @@ __Pages:__
 ___
 
 __Used:__ 
- React, Next, Form Submit, Swiper, Tailwind, Typescript 
+ React, Next, React Hook Form, Swiper, Tailwind, Typescript 
 
 <div style="display: flex; gap:10px; align-items: center">
-   <img src="/react-logo.png" width=50 height=50/>
-   <img src="/next-logo.png" width=50 height=50/>
-   <img src="/tailwind-logo.png" width=100 height=35/>
-   <img src="/html5-logo.png" width=70>
-   <img src="/form-submit-logo.png" width=70 height=30>
-   <img src="/swiper-logo.png" width=50 height=50/>
-   <img src="/typescript-logo.png" width=50 height=50/>
+   <img src="/public/react-logo.png" width=50 height=50/>
+   <img src="/public/next-logo.png" width=50 height=50/>
+   <img src="/public/tailwind-logo.png" width=100 height=35/>
+   <img src="/public/html5-logo.png" width=70>
+   <img src="/public/react-hook-form-logo.png" width=50 height=50>
+   <img src="/public/swiper-logo.png" width=50 height=50/>
+   <img src="/public/typescript-logo.png" width=50 height=50/>
  </div>

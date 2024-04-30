@@ -34,7 +34,7 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
       reset();
       setTimeout(() => {
         setShowSuccessMessage(false);
-      }, 1000); // Попап зникне через 1000 мілісекунд (1 секунда)
+      }, 1000); 
     }
   };
 
@@ -233,7 +233,7 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
       </form>
 
       {showSuccessMessage && (
-        <div className="inset-0 flex items-center justify-center">
+        <div className="relative inset-0 flex items-center justify-center">
           <div
             className="w-1/2 md:w-1/3 absolute bottom-14 flex items-center justify-center bg-cover bg-center"
             style={{

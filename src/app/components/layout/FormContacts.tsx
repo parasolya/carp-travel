@@ -9,46 +9,36 @@ const FormContacts = () => {
     handleSubmit,
     register,
     trigger,
-    watch,
     formState: { errors },
     reset,
   } = useForm();
 
-  const [isChecked, setIsChecked] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);  
+
   const isMediumScreen = useMediaQuery({
     query: '(min-width: 768px) and (max-width: 1279px)',
   });
 
-  const [isPhonePlaceholder, setisPhonePlaceholder] = useState<boolean>(true);
-  const [formattedValue, setFormattedValue] = useState('');
-
-  const handleChange = () => {
-    setIsChecked(!isChecked);
-  };
-
-  const [isSubmitSuccess, setIsSubmitSuccess] = useState(false);
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-
   const onSubmit = async (e: any) => {
     const isValid = await trigger();
     if (isValid) {
-      setIsSubmitSuccess(true);
-      alert(e);
+      setShowSuccessMessage(true);
+      reset();
       setTimeout(() => {
-        setShowSuccessMessage(true);
-        reset();
-      }, 1000);
+        setShowSuccessMessage(false);
+      }, 1000); 
     }
   };
 
+
   return (
-    <div className="h-full md:mt-10">
+    <div className="h-full w-full mt-6 md:mt-10">
       <h2 className="hidden">Form Contacts</h2>
 
       <form onSubmit={handleSubmit(onSubmit)} className="lg:mt-2">
         <div className="flex flex-col justify-between gap-4">
-          <div className="flex justify-between gap-4">
-            <div className="w-1/2 h-50 flex flex-col gap-4">
+          <div className="flex flex-col gap-8 md:flex-row justify-between md:gap-4">
+            <div className="w-full md:w-1/2 h-50 flex gap-8 flex-col md:gap-4">
               <div className="relative">
                 <label
                   htmlFor="name"
@@ -123,7 +113,7 @@ const FormContacts = () => {
               </div>
             </div>
 
-            <div className="w-1/2">
+            <div className="w-full md:w-1/2">
               <label
                 htmlFor="message"
                 className="block font-thin text-xs tracking-widest tracking-6 mb-2"
@@ -132,16 +122,14 @@ const FormContacts = () => {
               </label>
               <textarea
                 className="block resize-none w-full py-1 px-2 font-extralight text-xl leading-6 bg-white bg-opacity-5 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer"
-                // rows={isMediumScreen ? 8 : 10}
-                rows={8}
+                rows={isMediumScreen ? 8 : 9}
               ></textarea>
             </div>
           </div>
           <div className="flex gap-4">
             <div className="flex ml-auto mr-0">
               <button
-                // flex items-start
-                className="w-20 h-9 flex items-start justify-end font-medium md:text-3xl lg:text-lg cursor-pointer"
+                className="w-20 h-9 flex items-start justify-end font-medium text-4xl  md:text-3xl lg:text-lg cursor-pointer"
                 type="submit"
               >
                 SEND
@@ -152,11 +140,15 @@ const FormContacts = () => {
       </form>
 
       {showSuccessMessage && (
-        <div>
-          <div>
-            <p>
-              Successfull! <br />
-              You are in!
+        <div className="relative inset-0 flex items-center justify-center">
+          <div
+            className="w-1/2 md:w-1/3 absolute bottom-14 flex items-center justify-center bg-cover bg-center"
+            style={{
+              backgroundImage: 'url(/bg-hero.png)',
+            }}
+          >
+            <p className="py-8 md:py-12 ml:py-24 text-2xl font-thin">
+              Successfull!
             </p>
           </div>
         </div>

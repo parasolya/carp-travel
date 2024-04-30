@@ -7,6 +7,7 @@ import Title from './Title';
 import GalleryList from './GalleryList';
 
 function Gallery() {
+  
   const isMobileScreen = useMediaQuery({
     query: '(max-width: 767px)',
   }); 

@@ -35,11 +35,11 @@ const FormContacts = () => {
     <div className="h-full w-full mt-6 md:mt-10">
       <h2 className="hidden">Form Contacts</h2>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="lg:mt-2">
+      <form onSubmit={handleSubmit(onSubmit)} className="lg:h-full lg:w-full lg:mt-2">
         <div className="flex flex-col justify-between gap-4">
-          <div className="flex flex-col gap-8 md:flex-row justify-between md:gap-4">
-            <div className="w-full md:w-1/2 h-50 flex gap-8 flex-col md:gap-4">
-              <div className="relative">
+          <div className="lg:w-full flex flex-col gap-8 md:flex-row lg:flex-col justify-between md:gap-4 lg:gap-6">
+            <div className="w-full md:w-1/3 lg:w-full h-50 flex gap-8 flex-col lg:flex-row md:gap-4">
+              <div className="lg:w-full relative">
                 <label
                   htmlFor="name"
                   className="block font-thin text-xs tracking-widest mb-2"
@@ -47,8 +47,8 @@ const FormContacts = () => {
                   Full name
                 </label>
                 <input
-                  className={`w-full bg-white bg-opacity-5 py-1 pl-2 
-                  Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-xl leading-6 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer ${errors.name ? 'text-primary' : ''
+                  className={`w-full bg-white bg-opacity-5 py-1 lg:py-0 pl-2 
+                  Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-lg leading-6 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer ${errors.name ? 'text-primary' : ''
                   }`}
                   id="name"
                   type="text"
@@ -77,7 +77,7 @@ const FormContacts = () => {
                 )}
               </div>
 
-              <div className="relative">
+              <div className="lg:w-full relative">
                 <label
                   htmlFor="email"
                   className="block font-thin text-xs tracking-widest tracking-6 mb-2"
@@ -86,8 +86,8 @@ const FormContacts = () => {
                 </label>
                 <input
                   id="email"
-                  className={`w-full bg-white bg-opacity-5 py-1 pl-2 
-                Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-xl leading-6 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer ${
+                  className={`w-full bg-white bg-opacity-5 py-1 lg:py-0 pl-2 
+                Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-lg leading-6 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer ${
                   errors.name ? 'text-primary' : ''
                 }`}
                   type="text"
@@ -113,7 +113,7 @@ const FormContacts = () => {
               </div>
             </div>
 
-            <div className="w-full md:w-1/2">
+            <div className="w-full md:w-2/3 lg:w-full">
               <label
                 htmlFor="message"
                 className="block font-thin text-xs tracking-widest tracking-6 mb-2"
@@ -122,14 +122,14 @@ const FormContacts = () => {
               </label>
               <textarea
                 className="block resize-none w-full py-1 px-2 font-extralight text-xl leading-6 bg-white bg-opacity-5 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer"
-                rows={isMediumScreen ? 8 : 9}
+                rows={isMediumScreen ? 8 : 7}
               ></textarea>
             </div>
           </div>
           <div className="flex gap-4">
             <div className="flex ml-auto mr-0">
               <button
-                className="w-20 h-9 flex items-start justify-end font-medium text-4xl  md:text-3xl lg:text-lg cursor-pointer"
+                className="w-20 h-9 flex items-start justify-end font-medium text-4xl  md:text-3xl  cursor-pointer"
                 type="submit"
               >
                 SEND

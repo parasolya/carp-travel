@@ -4,10 +4,7 @@ import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 function Contacts() {
-  const isDesktopScreen = useMediaQuery({
-    query: '(min-width: 1280px)',
-  });
-
+ 
   return (
     <div className="lg:h-full lg:w-full mt-12 md:mt-10">
       <h2 className="hidden">Contacts</h2>
@@ -55,15 +52,14 @@ function Contacts() {
         </div>
         {/* 2 */}
         <div className="md:w-1/2 lg:w-full flex justify-end md:justify-start lg:justify-center items-start gap-4">
-          {!isDesktopScreen && (
-            <h3 className="lg:w-1/2 lg:text-start text-[12px] md:text-xs font-thin md:leading-5 lg:leading-6">
-              Follow us
-            </h3>
-          )}
-          <ul className='lg:w-1/2'>
+          <h3 className="lg:hidden lg:w-1/2 lg:text-start text-[12px] md:text-xs font-thin md:leading-5 lg:leading-6">
+            Follow us
+          </h3>
+
+          <ul className="lg:w-1/2">
             <li className="cursor-pointer flex justify-end">
               <a
-                className=" md:leading-5 lg:leading-6 cursor-pointer"
+                className=" md:leading-5 lg:leading-6 hover:underline cursor-pointer"
                 href="https://www.facebook.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -74,7 +70,7 @@ function Contacts() {
             </li>
             <li className="cursor-pointer flex justify-end">
               <a
-                className="md:leading-5 lg:leading-6 cursor-pointer"
+                className="md:leading-5 lg:leading-6 hover:underline cursor-pointer"
                 href="https://www.instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -85,7 +81,7 @@ function Contacts() {
             </li>
             <li className="cursor-pointer flex justify-end">
               <a
-                className="md:leading-5 lg:leading-6 cursor-pointer"
+                className="md:leading-5 lg:leading-6 hover:underline cursor-pointer"
                 href="https://www.youtube.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -96,7 +92,7 @@ function Contacts() {
             </li>
             <li className="flex justify-end">
               <a
-                className="md:leading-5 lg:leading-6 cursor-pointer"
+                className="md:leading-5 lg:leading-6 hover:underline cursor-pointer"
                 href="https://www.tiktok.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -106,11 +102,10 @@ function Contacts() {
               </a>
             </li>
           </ul>
-          {isDesktopScreen && (
-            <h3 className="lg:w-1/2 lg:text-start text-[12px] md:text-xs font-thin md:leading-5 lg:leading-6">
-              Follow us
-            </h3>
-          )}
+
+          <h3 className="hidden lg:visible lg:w-1/2 lg:text-start text-[12px] md:text-xs font-thin md:leading-5 lg:leading-6">
+            Follow us
+          </h3>
         </div>
       </div>
     </div>

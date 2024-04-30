@@ -21,7 +21,7 @@ export default function Hero() {
               <h2 className="font-medium text-[37px] md:text-7xl lg:text-[98px] leading-none uppercase">
                 7 <span className="font-thin md:tracking-tight lg:tracking-[0.11em]">DAYS</span>
               </h2>
-              <p className="-mt-1 font-thin tracking-[0.6em] md:tracking-[1.5em] lg:tracking-[2.em] ">
+              <p className="-mt-1 font-thin tracking-[0.6em] md:tracking-[1.5em] lg:tracking-[2.5em] ">
                 JOURNEY
               </p>
             </div>

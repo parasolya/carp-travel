@@ -27,14 +27,16 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
     setIsChecked(!isChecked);
   };
 
-  const onSubmit = async (e: any) => {
+  const onSubmit: SubmitHandler<Record<string, any>> = async (data) => {
+    const formData = { ...data, checkbox: isChecked };
+    localStorage.setItem('formData', JSON.stringify(formData));
     const isValid = await trigger();
     if (isValid) {
       setShowSuccessMessage(true);
       reset();
       setTimeout(() => {
         setShowSuccessMessage(false);
-      }, 1000); 
+      }, 1000);
     }
   };
 
@@ -72,25 +74,26 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
                   type="text"
                   placeholder="John Smith"
                   {...register('name', {
-                    required: true,
-                    maxLength: 30,
-                    pattern: /^[A-Za-z]+\s[A-Za-z]+$/,
+                    required: {
+                      value: true,
+                      message: '❌ This field is required.',
+                    },
+                    maxLength: {
+                      value: 30,
+                      message: '❌ Max length is 30 characters.',
+                    },
+                    pattern: {
+                      value: /^[A-Za-z]+\s[A-Za-z]+$/,
+                      message: '❌ Incorrect name',
+                    },
                   })}
                 />
-                {errors.name && (
+                {errors.name && typeof errors.name.message === 'string' && (
                   <p
                     className="absolute right-0 font-thin text-xs tracking-widest tracking-6 text-primary"
                     style={{ visibility: 'visible' }}
                   >
-                    {errors.name &&
-                      errors.name.type === 'required' &&
-                      '❌ This field is required.'}
-                    {errors.name &&
-                      errors.name.type === 'maxLength' &&
-                      '❌ Max length is 20 characters.'}
-                    {errors.name &&
-                      errors.name.type === 'pattern' &&
-                      '❌ Incorrect name'}
+                    {errors.name.message}
                   </p>
                 )}
               </div>
@@ -111,21 +114,22 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
                   type="text"
                   placeholder="johnsmith@email.com"
                   {...register('email', {
-                    required: true,
-                    pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                    required: {
+                      value: true,
+                      message: '❌ This field is required.',
+                    },
+                    pattern: {
+                      value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                      message: '❌ Incorrect email',
+                    },
                   })}
                 />
-                {errors.email && (
+                {errors.email && typeof errors.email.message === 'string' && (
                   <p
                     className="absolute right-0 font-thin text-xs tracking-widest tracking-6 text-primary"
                     style={{ visibility: 'visible' }}
                   >
-                    {errors.email &&
-                      errors.email.type === 'required' &&
-                      '❌ This field is required.'}
-                    {errors.email &&
-                      errors.email.type === 'pattern' &&
-                      '❌ Incorrect email'}
+                    {errors.email.message}
                   </p>
                 )}
               </div>
@@ -142,7 +146,7 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
               Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-xl leading-6 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer"
                   type="text"
                   placeholder="Movie maker"
-                  {...register('Position')}
+                  {...register('position')}
                 />
               </div>
               <div className="relative">
@@ -159,30 +163,31 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
                   <input
                     id="phone"
                     className={`flex-1 py-1 lg:py-0 pl-2 Inter font-extralight md:text-xs lg:text-xl leading-6 placeholder-white placeholder-opacity-20 bg-white bg-opacity-5 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer ${
-                      errors.name ? 'text-primary' : ''
+                      errors.phone ? 'text-primary' : ''
                     }`}
                     type="text"
                     placeholder="(097) 12 34 567"
                     {...register('phone', {
-                      required: true,
-                      maxLength: 20,
-                      pattern: /^\(\d{3}\)\s\d{2}\s\d{2}\s\d{3}$/,
+                      required: {
+                        value: true,
+                        message: '❌ This field is required.',
+                      },
+                      maxLength: {
+                        value: 20,
+                        message: '❌ Max length is 20 characters.',
+                      },
+                      pattern: {
+                        value: /^\(\d{3}\)\s\d{2}\s\d{2}\s\d{3}$/,
+                        message: '❌ Incorrect phone',
+                      },
                     })}
                   />
-                  {errors.phone && (
+                  {errors.phone && typeof errors.phone.message === 'string' && (
                     <p
                       className="absolute right-0 -bottom-4 font-thin text-xs tracking-widest tracking-6 text-primary"
                       style={{ visibility: 'visible' }}
                     >
-                      {errors.phone &&
-                        errors.phone.type === 'required' &&
-                        '❌ This field is required.'}
-                      {errors.phone &&
-                        errors.phone.type === 'maxLength' &&
-                        '❌ Max length is 20 characters.'}
-                      {errors.phone &&
-                        errors.phone.type === 'pattern' &&
-                        '❌ Incorrect phone'}
+                      {errors.phone.message}
                     </p>
                   )}
                 </div>
@@ -197,15 +202,21 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
                 Message
               </label>
               <textarea
+                id="message"
                 className="block resize-none w-full py-1 md:py-2 px-2 font-extralight text-xl leading-6 bg-white bg-opacity-5 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer"
                 rows={isMediumScreen ? 8 : 9}
+                {...register('message')}
               ></textarea>
             </div>
           </div>
           <div className="md:flex gap-4">
             <div className="md:w-1/2 lg:w-full mb-4 md:mb-0 flex gap-2 lg:mt-2 ">
-              <label className="h-6 w-6 flex flex-shrink-0 items-center justify-center  border border-white cursor-pointer">
+              <label
+                htmlFor="checkbox"
+                className="h-6 w-6 flex flex-shrink-0 items-center justify-center  border border-white cursor-pointer"
+              >
                 <input
+                  id="checkbox"
                   type="checkbox"
                   className="hidden appearance-none"
                   checked={isChecked}

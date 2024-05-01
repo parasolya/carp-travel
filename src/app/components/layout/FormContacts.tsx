@@ -13,103 +13,111 @@ const FormContacts = () => {
     reset,
   } = useForm();
 
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);  
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const isMediumScreen = useMediaQuery({
     query: '(min-width: 768px) and (max-width: 1279px)',
   });
 
-  const onSubmit = async (e: any) => {
+  const onSubmit: SubmitHandler<Record<string, any>> = async (data) => {
+    localStorage.setItem('formData', JSON.stringify(data));
     const isValid = await trigger();
     if (isValid) {
       setShowSuccessMessage(true);
       reset();
       setTimeout(() => {
         setShowSuccessMessage(false);
-      }, 1000); 
+      }, 1000);
     }
   };
-
 
   return (
     <div className="h-full w-full mt-6 md:mt-10">
       <h2 className="hidden">Form Contacts</h2>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="lg:h-full lg:w-full lg:mt-2">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="lg:h-full lg:w-full lg:mt-2"
+      >
         <div className="flex flex-col justify-between gap-4">
           <div className="lg:w-full flex flex-col gap-8 md:flex-row lg:flex-col justify-between md:gap-4 lg:gap-6">
             <div className="w-full md:w-1/3 lg:w-full h-50 flex gap-8 flex-col lg:flex-row md:gap-4">
               <div className="lg:w-full relative">
                 <label
-                  htmlFor="name"
+                  htmlFor="name_form2"
                   className="block font-thin text-xs tracking-widest mb-2"
                 >
                   Full name
                 </label>
                 <input
                   className={`w-full bg-white bg-opacity-5 py-1 lg:py-0 pl-2 
-                  Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-lg leading-6 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer ${errors.name ? 'text-primary' : ''
+                  Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-lg leading-6 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer ${
+                    errors.name_form2 ? 'text-primary' : ''
                   }`}
-                  id="name"
+                  id="name_form2"
                   type="text"
                   placeholder="John Smith"
-                  {...register('name', {
-                    required: true,
-                    maxLength: 30,
-                    pattern: /^[A-Za-z]+\s[A-Za-z]+$/,
+                  {...register('name_form2', {
+                    required: {
+                      value: true,
+                      message: '❌ This field is required.',
+                    },
+                    maxLength: {
+                      value: 30,
+                      message: '❌ Max length is 30 characters.',
+                    },
+                    pattern: {
+                      value: /^[A-Za-z]+\s[A-Za-z]+$/,
+                      message: '❌ Incorrect name',
+                    },
                   })}
                 />
-                {errors.name && (
-                  <p
-                    className="absolute right-0 font-thin text-xs tracking-widest tracking-6 text-primary"
-                    style={{ visibility: 'visible' }}
-                  >
-                    {errors.name &&
-                      errors.name.type === 'required' &&
-                      '❌ This field is required.'}
-                    {errors.name &&
-                      errors.name.type === 'maxLength' &&
-                      '❌ Max length is 20 characters.'}
-                    {errors.name &&
-                      errors.name.type === 'pattern' &&
-                      '❌ Incorrect name'}
-                  </p>
-                )}
+                {errors.name_form2 &&
+                  typeof errors.name_form2.message === 'string' && (
+                    <p
+                      className="absolute right-0 font-thin text-xs tracking-widest tracking-6 text-primary"
+                      style={{ visibility: 'visible' }}
+                    >
+                      {errors.name_form2.message}
+                    </p>
+                  )}
               </div>
 
               <div className="lg:w-full relative">
                 <label
-                  htmlFor="email"
+                  htmlFor="email_form2"
                   className="block font-thin text-xs tracking-widest tracking-6 mb-2"
                 >
                   E-mail
                 </label>
                 <input
-                  id="email"
+                  id="email_form2"
                   className={`w-full bg-white bg-opacity-5 py-1 lg:py-0 pl-2 
                 Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-lg leading-6 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer ${
-                  errors.name ? 'text-primary' : ''
+                  errors.email_form2 ? 'text-primary' : ''
                 }`}
                   type="text"
                   placeholder="johnsmith@email.com"
-                  {...register('email', {
-                    required: true,
-                    pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                  {...register('email_form2', {
+                    required: {
+                      value: true,
+                      message: '❌ This field is required.',
+                    },
+                    pattern: {
+                      value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                      message: '❌ Incorrect email',
+                    },
                   })}
                 />
-                {errors.email && (
-                  <p
-                    className="absolute right-0 font-thin text-xs tracking-widest tracking-6 text-primary"
-                    style={{ visibility: 'visible' }}
-                  >
-                    {errors.email &&
-                      errors.email.type === 'required' &&
-                      '❌ This field is required.'}
-                    {errors.email &&
-                      errors.email.type === 'pattern' &&
-                      '❌ Incorrect email'}
-                  </p>
-                )}
+                {errors.email_form2 &&
+                  typeof errors.email_form2.message === 'string' && (
+                    <p
+                      className="absolute right-0 font-thin text-xs tracking-widest tracking-6 text-primary"
+                      style={{ visibility: 'visible' }}
+                    >
+                      {errors.email_form2.message}
+                    </p>
+                  )}
               </div>
             </div>
 
@@ -121,8 +129,10 @@ const FormContacts = () => {
                 Message
               </label>
               <textarea
+                id="message"
                 className="block resize-none w-full py-1 px-2 font-extralight text-xl leading-6 bg-white bg-opacity-5 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer"
                 rows={isMediumScreen ? 8 : 7}
+                {...register('message')}
               ></textarea>
             </div>
           </div>

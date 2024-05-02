@@ -91,7 +91,7 @@ export default function Carousel() {
 
         <div className=" swiper-navigation flex justify-around items-center">
           <button
-            className=" text-white font-thin text-2xl uppercase"
+            className=" text-white font-thin text-2xl uppercase cursor-pointer outline-none shadow-none hover:font-extralight hover:underline hover:transition hover:duration-150 ease-in-out focus:font-extralight focus:underline focus:transition focus:duration-150"
             onClick={() =>
               swiperRef.current && swiperRef.current.swiper.slidePrev()
             }
@@ -99,7 +99,7 @@ export default function Carousel() {
             Back
           </button>
           <button
-            className=" text-white font-thin text-2xl uppercase"
+            className=" text-white font-thin text-2xl uppercase cursor-pointer outline-none shadow-none hover:font-extralight hover:underline hover:transition hover:duration-150 ease-in-out focus:font-extralight focus:underline focus:transition focus:duration-150"
             onClick={() =>
               swiperRef.current && swiperRef.current.swiper.slideNext()
             }

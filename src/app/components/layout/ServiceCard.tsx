@@ -36,9 +36,9 @@ export default function Card2({ elementNumber }: ServiceCardProps) {
       }}
     >
       <div className="w-full md:flex items-center md:mb-8 lg:mb-4">
-        <h1 className="md:w-2/3 lg:w-1/2 mb-4 md:mb-0 font-thin text-4xl md:text-7xl lg:text-8xl tracking-tight leading-none md:leading-[80px] lg:leading-[110px] uppercase">
+        <h2 className="md:w-2/3 lg:w-1/2 mb-4 md:mb-0 font-thin text-4xl md:text-7xl lg:text-8xl tracking-tight leading-none md:leading-[80px] lg:leading-[110px] uppercase">
           WE <span className="font-medium">OFFER</span>
-        </h1>
+        </h2>
 
         <p className="md:w-1/3 mb-4 md:mb-0 text-end md:text-start font-thin text-4xl md:text-7xl lg:text-8xl tracking-tight md:leading-[80px] lg:leading-[110px]">
           {`${selectedService.number}/`}
@@ -68,19 +68,19 @@ export default function Card2({ elementNumber }: ServiceCardProps) {
                       handleOfferClick(index);
                     }}
                   >
-                    <div className="flex md:mb-2 lg:mb-0">
-                      {index === selectedOfferIndex && (
-                        <div className="mr-2 text-xs">◆</div>
-                      )}
+                    <div
+                      className='flex md:mb-2 lg:mb-0'
+                    >
                       <div
-                        className={`md:pr-6 text-start md:text-xl lg:text-2xl md:line-18 lg:line-24 md:leading-[22px] lg:leading-[24px] uppercase filter ${
+                        className={`md:pr-6 flex items-center text-start md:text-xl lg:text-2xl md:line-18 lg:line-24 md:leading-[22px] lg:leading-[24px] uppercase cursor-pointer hover:brightness-100 hover:font-medium hover:transition-all hover:duration-150 ease-in-out focus:brightness-100 focus:font-medium focus:transition-all focus:duration-150 filter ${
                           index === selectedOfferIndex
-                            ? 'brightness-100'
-                            : 'brightness-50'
-                        }`}
-                        style={{
-                          fontWeight: index === selectedOfferIndex ? 500 : 200,
-                        }}
+                            ? 'brightness-100 font-medium'
+                            : 'brightness-50 font-extralight'
+                        } hover:before:content-['◆'] focus:before:content-['◆'] ${
+                          index === selectedOfferIndex
+                            ? "before:content-['◆']"
+                            : "before:content-['']"
+                        } before:mr-1 before:text-xs`}                       
                       >
                         {offer}
                       </div>

@@ -51,11 +51,11 @@ const FormContacts = () => {
                 </label>
                 <input
                   className={`w-full bg-white bg-opacity-5 py-1 lg:py-0 pl-2 
-                  Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-lg leading-6 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer ${
+                  Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-lg leading-6 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer hover:transition hover:duration-150 ease-in-out focus:transition focus:duration-150 ${
                     errors.name_form2 ? 'text-primary' : ''
                   }`}
                   id="name_form2"
-                  type="text"
+                  type="text" 
                   placeholder="John Smith"
                   {...register('name_form2', {
                     required: {
@@ -93,7 +93,7 @@ const FormContacts = () => {
                 <input
                   id="email_form2"
                   className={`w-full bg-white bg-opacity-5 py-1 lg:py-0 pl-2 
-                Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-lg leading-6 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer ${
+                Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-lg leading-6 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer hover:transition hover:duration-150 ease-in-out focus:transition focus:duration-150  ${
                   errors.email_form2 ? 'text-primary' : ''
                 }`}
                   type="text"
@@ -130,7 +130,7 @@ const FormContacts = () => {
               </label>
               <textarea
                 id="message"
-                className="block resize-none w-full py-1 px-2 font-extralight text-xl leading-6 bg-white bg-opacity-5 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer"
+                className="block resize-none w-full py-1 px-2 font-extralight text-xl leading-6 bg-white bg-opacity-5 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer hover:transition hover:duration-150 ease-in-out focus:transition focus:duration-150"
                 rows={isMediumScreen ? 8 : 7}
                 {...register('message')}
               ></textarea>
@@ -139,7 +139,7 @@ const FormContacts = () => {
           <div className="flex gap-4">
             <div className="flex ml-auto mr-0">
               <button
-                className="w-20 h-9 flex items-start justify-end font-medium text-4xl  md:text-3xl  cursor-pointer"
+                className="w-20 h-9 flex items-start justify-end font-medium text-4xl  md:text-3xl cursor-pointer outline-none shadow-none hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
                 type="submit"
               >
                 SEND

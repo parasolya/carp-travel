@@ -22,7 +22,7 @@ __Used:__
    <img src="/public/react-logo.png" width=50 height=50/>
    <img src="/public/next-logo.png" width=50 height=50/>
    <img src="/public/tailwind-logo.png" width=100 height=35/>
-   <img src="/public/html5-logo.png" width=70>
+   <img src="/public/html5-logo.png" width=70 height=50>
    <img src="/public/react-hook-form-logo.png" width=50 height=50>
    <img src="/public/swiper-logo.png" width=50 height=50/>
    <img src="/public/typescript-logo.png" width=50 height=50/>

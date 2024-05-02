@@ -51,7 +51,7 @@ export default function Hero() {
               offset={0}
               duration={500}
             >
-              <div className="relative w-full h-[53px] md:h-[50px] lg:h-[71px] flex bg-white bg-opacity-10 focus:bg-opacity-20 hover:bg-opacity-20">
+              <div className="relative w-full h-[53px] md:h-[50px] lg:h-[71px] flex bg-white bg-opacity-10 focus:bg-opacity-20 hover:bg-opacity-20 hover:transition hover:duration-150 ease-in-out focus:transition focus:duration-150">
                 <div className="box-border h-full w-1/6 ">
                   <div className="h-1/6 border-t border-l border-white"></div>
                   <div className="h-4/6"></div>

@@ -18,7 +18,7 @@ function Contacts() {
             <ul className="lg:w-1/2 list-none text-end items-center">
               <li className="cursor-pointer">
                 <a
-                  className="md:leading-5 lg:leading-6"
+                  className="md:leading-5 lg:leading-6 outline-none shadow-none hover:underline focus:underline hover:transition-all hover:duration-150 ease-in-out focus:transition-all focus:duration-150"
                   href="tel:+380961234567"
                 >
                   +38 (098) 12 34 567
@@ -26,7 +26,7 @@ function Contacts() {
               </li>
               <li className="cursor-pointer">
                 <a
-                  className="md:leading-5 lg:leading-6"
+                  className="md:leading-5 lg:leading-6 outline-none shadow-none hover:underline focus:underline hover:transition-all hover:duration-150 ease-in-out focus:transition-all focus:duration-150"
                   href="tel:+380731234567"
                 >
                   +38 (073) 12 34 567
@@ -41,7 +41,7 @@ function Contacts() {
           <div className=" flex justify-center lg:justify-center items-start gap-4">
             <div className="lg:w-1/2 lg:flex justify-end cursor-pointer">
               <a
-                className="text-right md:leading-5 lg:leading-6"
+                className="text-right md:leading-5 lg:leading-6 outline-none shadow-none hover:underline focus:underline hover:transition-all hover:duration-150 ease-in-out focus:transition-all focus:duration-150"
                 href="mailto::support@carptravel.com"
               >
                 support@carptravel.com
@@ -63,7 +63,7 @@ function Contacts() {
           <ul className="lg:w-1/2">
             <li className="cursor-pointer flex justify-end">
               <a
-                className=" md:leading-5 lg:leading-6 hover:underline cursor-pointer"
+                className=" md:leading-5 lg:leading-6 outline-none shadow-none hover:underline focus:underline hover:transition-all hover:duration-150 ease-in-out focus:transition-all focus:duration-150"
                 href="https://www.facebook.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -74,7 +74,7 @@ function Contacts() {
             </li>
             <li className="cursor-pointer flex justify-end">
               <a
-                className="md:leading-5 lg:leading-6 hover:underline cursor-pointer"
+                className="md:leading-5 lg:leading-6 outline-none shadow-none hover:underline focus:underline hover:transition-all hover:duration-150 ease-in-out focus:transition-all focus:duration-150"
                 href="https://www.instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -85,7 +85,7 @@ function Contacts() {
             </li>
             <li className="cursor-pointer flex justify-end">
               <a
-                className="md:leading-5 lg:leading-6 hover:underline cursor-pointer"
+                className="md:leading-5 lg:leading-6 outline-none shadow-none focus:underline hover:transition-all hover:duration-150 ease-in-out focus:transition-all focus:duration-150 cursor-pointer"
                 href="https://www.youtube.com/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -96,7 +96,7 @@ function Contacts() {
             </li>
             <li className="flex justify-end">
               <a
-                className="md:leading-5 lg:leading-6 hover:underline cursor-pointer"
+                className="md:leading-5 lg:leading-6 outline-none shadow-none hover:underline focus:underline hover:transition-all hover:duration-150 ease-in-out focus:transition-all focus:duration-150"
                 href="https://www.tiktok.com/"
                 target="_blank"
                 rel="noopener noreferrer"

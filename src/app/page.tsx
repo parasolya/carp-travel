@@ -9,7 +9,7 @@ import ContactUs from './components/layout/ContactUs';
 export default function Home() {
   return (
     <>
-      <Header />
+      
       <Hero />
       <About />
       <Services />

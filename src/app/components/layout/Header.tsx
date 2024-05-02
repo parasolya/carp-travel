@@ -42,60 +42,79 @@ export default function Header() {
       <header className="relative bg-yellow-500">
         {!isMobileMenuVisible && (
           <div className="absolute w-full flex justify-between box-border mx-auto px-8 pt-6 lg:px-20">
-            <Logo />
+            <Link
+              className="outline-none shadow-none cursor-pointer"
+              activeClass="active"
+              to="hero"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500} 
+              tabIndex={0}
+            >
+              <Logo />
+            </Link>
+
             <nav className="flex items-end lg:items-center justify-between gap-6 lg:gap-8">
               <Link
-                className="cursor-pointer"
+              className="outline-none shadow-none cursor-pointer  hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
                 activeClass="active"
                 to="about"
                 spy={true}
                 smooth={true}
                 offset={0}
-                duration={500}
+                duration={500} 
+                tabIndex={0}
+                
               >
                 About
               </Link>
               <Link
-              className="cursor-pointer"
+                className="cursor-pointer outline-none shadow-none hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
                 activeClass="active"
                 to="services"
                 spy={true}
                 smooth={true}
                 offset={0}
-                duration={500}
+                duration={500} 
+                tabIndex={0}
+              
               >
                 Services
               </Link>
               <Link
-              className="cursor-pointer"
+                className="cursor-pointer outline-none shadow-none hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
                 activeClass="active"
                 to="career"
                 spy={true}
                 smooth={true}
                 offset={0}
-                duration={500}
+                duration={500} 
+                tabIndex={0}
               >
                 Career
               </Link>
               <Link
-              className="cursor-pointer"
+                className="cursor-pointer outline-none shadow-none hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
                 activeClass="active"
                 to="gallery"
                 spy={true}
                 smooth={true}
                 offset={0}
-                duration={500}
+                duration={500} 
+                tabIndex={0}
               >
                 Gallery
               </Link>
               <Link
-              className="cursor-pointer"
+                className="cursor-pointer outline-none shadow-none hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
                 activeClass="active"
                 to="contacts"
                 spy={true}
                 smooth={true}
                 offset={0}
-                duration={500}
+                duration={500} 
+                tabIndex={0}
               >
                 Contacts
               </Link>
@@ -114,12 +133,23 @@ export default function Header() {
               className="w-full flex justify-between items-center"
               onClick={() => setIsMenuToggled(!isMenuToggled)}
             >
-              <Logo />
+              <Link
+                className="cursor-pointer outline-none shadow-none"
+                activeClass="active"
+                to="hero"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500} 
+                tabIndex={0}
+              >
+                <Logo />
+              </Link>
 
               <div>
                 <div>
                   <button
-                    className="pointer-events-auto uppercase"
+                    className="pointer-events-auto uppercase hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
                     onClick={() => setIsMenuToggled(!isMenuToggled)}
                   >
                     menu
@@ -144,7 +174,7 @@ export default function Header() {
               <div>
                 <div>
                   <button
-                    className="pointer-events-auto uppercase"
+                    className="pointer-events-auto uppercase hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
                     onClick={() => setIsMenuToggled(!isMenuToggled)}
                   >
                     CLOSE
@@ -161,61 +191,66 @@ export default function Header() {
             >
               <div className="flex flex-col gap-12 pt-32">
                 <Link
-                  className="text-xl cursor-pointer"
+                  className="text-xl cursor-pointer outline-none shadow-none hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
                   activeClass="active"
                   to="about"
                   spy={true}
                   smooth={true}
                   offset={0}
-                  duration={500}
+                  duration={500} 
+                  tabIndex={0}
                   onClick={() => setIsMenuToggled(!isMenuToggled)}
                 >
                   About
                 </Link>
                 <Link
-                  className="text-xl cursor-pointer"
+                  className="text-xl cursor-pointer outline-none shadow-none hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
                   activeClass="active"
                   to="services"
                   spy={true}
                   smooth={true}
                   offset={0}
-                  duration={500}
+                  duration={500} 
+                  tabIndex={0}
                   onClick={() => setIsMenuToggled(!isMenuToggled)}
                 >
                   Services
                 </Link>
                 <Link
-                  className="text-xl cursor-pointer"
+                  className="text-xl cursor-pointer outline-none shadow-none hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
                   activeClass="active"
                   to="career"
                   spy={true}
                   smooth={true}
                   offset={0}
-                  duration={500}
+                  duration={500} 
+                  tabIndex={0}
                   onClick={() => setIsMenuToggled(!isMenuToggled)}
                 >
                   Career
                 </Link>
                 <Link
-                  className="text-xl cursor-pointer"
+                  className="text-xl cursor-pointer outline-none shadow-none hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
                   activeClass="active"
                   to="gallery"
                   spy={true}
                   smooth={true}
                   offset={0}
-                  duration={500}
+                  duration={500} 
+                  tabIndex={0}
                   onClick={() => setIsMenuToggled(!isMenuToggled)}
                 >
                   Gallery
                 </Link>
                 <Link
-                  className="text-xl cursor-pointer"
+                  className="text-xl cursor-pointer outline-none shadow-none hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
                   activeClass="active"
                   to="contacts"
                   spy={true}
                   smooth={true}
                   offset={0}
-                  duration={500}
+                  duration={500} 
+                  tabIndex={0}
                   onClick={() => setIsMenuToggled(!isMenuToggled)}
                 >
                   Contacts

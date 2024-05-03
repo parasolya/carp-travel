@@ -6,7 +6,7 @@ import advantages from '../../../../shared/advantages';
 
 import { useMediaQuery } from 'react-responsive';
 
-export default function Career() {
+const Career: React.FC = () => {
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
   const isMobileScreen = useMediaQuery({
@@ -52,4 +52,6 @@ export default function Career() {
       </div>
     </section>
   );
-}
+};
+
+export default Career;

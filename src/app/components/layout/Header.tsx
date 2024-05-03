@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 import Logo from './Logo';
 
-export default function Header() {
+const Header: React.FC = () => {
+
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
   const [isMenuToggled, setIsMenuToggled] = useState(false);
 
@@ -264,4 +265,6 @@ export default function Header() {
       </header>
     </>
   );
-}
+};
+
+export default Header;

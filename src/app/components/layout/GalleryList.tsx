@@ -3,7 +3,8 @@
 import Image from 'next/image';
 import React from 'react';
 
-const GalleryList = () => {
+const GalleryList: React.FC = () => {
+
   return (
     <ul className="list-none flex flex-col gap-6 items-center">
       <li>

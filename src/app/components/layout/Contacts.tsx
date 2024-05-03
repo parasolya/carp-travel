@@ -3,7 +3,7 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 
-function Contacts() {
+const Contacts: React.FC = () => {
   const isDesktopScreen = useMediaQuery({
     query: '(min-width: 1280px)',
   });

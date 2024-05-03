@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Title from './Title';
 
-function About() {
+const About: React.FC = () => {
   const [isTablet, setIsTablet] = useState<boolean | null>(null);
 
   const isMediumScreen = useMediaQuery({

@@ -3,7 +3,8 @@ import Contacts from './Contacts';
 import FormContacts from './FormContacts';
 import Title from './Title';
 
-function ContactUs() {
+const ContactUs: React.FC = () => {
+
   return (
     <section
       id="contacts"

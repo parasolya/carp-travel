@@ -6,7 +6,8 @@ import Carousel from './Carousel';
 import Title from './Title';
 import GalleryList from './GalleryList';
 
-function Gallery() {
+const Gallery: React.FC = () => {
+
   
   const [isMobile, setIsMobile] = useState<boolean | null>(null); 
 

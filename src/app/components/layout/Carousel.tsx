@@ -6,8 +6,9 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 import { EffectCoverflow, Navigation } from 'swiper/modules';
 import React, { useRef } from 'react';
+import Image from 'next/image';
 
-export default function Carousel() {
+const Carousel: React.FC = () => {
   const swiperRef = useRef<any>(null);
 
   const [activeIndex, setActiveIndex] = useState(1);
@@ -45,48 +46,36 @@ export default function Carousel() {
         className="swiper_container absolute z-10"
       >
         <div className="swiper-wrapper w-500">
-          <SwiperSlide className="h-107 w-152">
-            <img
-              src="/gallery-2.png"
-              alt="slide_image"
-              className="w-full h-full object-cover"
-            />
+        <SwiperSlide>
+            <Image className="w-[415px] h-[294px] lg:w-[606px] lg:h-[429px]" src="/gallery-1.png" alt="lake" width={606} height={429} />
           </SwiperSlide>
-          <SwiperSlide className="h-107 w-152">
-            <img
-              src="/gallery-1.png"
-              alt="slide_image"
-              className="w-full h-full object-cover"
-            />
+          <SwiperSlide>
+            <Image className="w-[415px] h-[294px] lg:w-[606px] lg:h-[429px]" src="/gallery-2.png" alt="forest" width={606} height={429} />
           </SwiperSlide>
-          <SwiperSlide className="h-107 w-152">
-            <img
+          <SwiperSlide>
+            <Image
+            className="md:w-[415px] md:h-[294px] lg:w-[606px] lg:h-[429px]"
               src="/gallery-3.png"
-              alt="slide_image"
-              className="w-full h-full object-cover"
+              alt="mountain"
+              width={606}
+              height={429}
             />
           </SwiperSlide>
-          <SwiperSlide className="h-107 w-152">
-            <img
-              src="/gallery-1.png"
-              alt="slide_image"
-              className="w-full h-full object-cover"
-            />
+          <SwiperSlide>
+            <Image className="w-[415px] h-[294px] lg:w-[606px] lg:h-[429px]" src="/gallery-1.png" alt="lake" width={606} height={429} />
           </SwiperSlide>
-          <SwiperSlide className="h-107 w-152">
-            <img
-              src="/gallery-2.png"
-              alt="slide_image"
-              className="w-full h-full object-cover"
-            />
+          <SwiperSlide>
+            <Image className="w-[415px] h-[294px] lg:w-[606px] lg:h-[429px]" src="/gallery-2.png" alt="forest" width={606} height={429} />
           </SwiperSlide>
-          <SwiperSlide className="h-107 w-152">
-            <img
+          <SwiperSlide>
+            <Image className="w-[415px] h-[294px] lg:w-[606px] lg:h-[429px]"
               src="/gallery-3.png"
-              alt="slide_image"
-              className="w-full h-full object-cover"
+              alt="mountain"
+              width={606}
+              height={429}
             />
           </SwiperSlide>
+
         </div>
 
         <div className=" swiper-navigation flex justify-around items-center">
@@ -110,4 +99,6 @@ export default function Carousel() {
       </Swiper>
     </div>
   );
-}
+};
+
+export default Carousel;

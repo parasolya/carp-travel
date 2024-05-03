@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Logo() {
+const Logo: React.FC = () => {
   return (
     <svg
       aria-label="Logo"
@@ -43,4 +43,6 @@ export default function Logo() {
       </defs>
     </svg>
   );
-}
+};
+
+export default Logo;

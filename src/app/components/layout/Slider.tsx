@@ -14,7 +14,7 @@ type Count = {
   count: number;
 };
 
-const Slider = ({ count }: Count) => {
+const Slider: React.FC<Count> = ({ count }) => {
   const numbers = Array.from({ length: count }, (_, index) => index + 1);
 
   return (

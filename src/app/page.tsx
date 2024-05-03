@@ -8,8 +8,7 @@ import ContactUs from './components/layout/ContactUs';
 
 export default function Home() {
   return (
-    <>
-      
+    <>     
       <Hero />
       <About />
       <Services />

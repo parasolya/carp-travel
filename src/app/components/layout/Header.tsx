@@ -150,6 +150,7 @@ export default function Header() {
                 <div>
                   <button
                     className="pointer-events-auto uppercase hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
+                    type='button'
                     onClick={() => setIsMenuToggled(!isMenuToggled)}
                   >
                     menu
@@ -175,6 +176,7 @@ export default function Header() {
                 <div>
                   <button
                     className="pointer-events-auto uppercase hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
+                    type='button'
                     onClick={() => setIsMenuToggled(!isMenuToggled)}
                   >
                     CLOSE

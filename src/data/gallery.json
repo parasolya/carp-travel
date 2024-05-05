@@ -1,0 +1,32 @@
+{
+  "title": {
+    "firstWords": "OUR",
+    "secondWords": "GALLERY"
+  },
+  "slides": [
+    {
+      "img": "/gallery-1.png",
+      "alt": "Lake"
+    },
+    {
+      "img": "/gallery-2.png",
+      "alt": "Forest"
+    },
+    {
+      "img": "/gallery-3.png",
+      "alt": "Mountain"
+    },
+    {
+      "img": "/gallery-1.png",
+      "alt": "Lake"
+    },
+    {
+      "img": "/gallery-2.png",
+      "alt": "Forest"
+    },
+    {
+      "img": "/gallery-3.png",
+      "alt": "Mountain"
+    }
+  ]
+}

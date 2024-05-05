@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
-import Logo from './Logo';
+import Logo from '../components/Logo';
 
 const Header: React.FC = () => {
 
@@ -40,7 +40,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="relative bg-yellow-500">
+      <header className="relative">
         {!isMobileMenuVisible && (
           <div className="absolute w-full flex justify-between box-border mx-auto px-8 pt-6 lg:px-20">
             <Link

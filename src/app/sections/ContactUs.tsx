@@ -1,7 +1,7 @@
 import React from 'react';
-import Contacts from './Contacts';
-import FormContacts from './FormContacts';
-import Title from './Title';
+import Contacts from '../../components/Contacts';
+import FormContacts from '../../components/FormContacts';
+import Title from '../../components/Title';
 
 const ContactUs: React.FC = () => {
 

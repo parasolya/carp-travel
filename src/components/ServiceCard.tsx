@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
-import services from '../../../../shared/services';
+import services from '../../shared/services';
 import Title from './Title';
 
 interface ServiceCardProps {

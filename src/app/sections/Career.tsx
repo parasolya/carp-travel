@@ -1,8 +1,8 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import FormChooseUs from './FormChooseUs';
+import FormChooseUs from '../../components/FormChooseUs';
 import WhyUs from './WhyUs';
-import advantages from '../../../../shared/advantages';
+import advantages from '../../../shared/advantages';
 
 import { useMediaQuery } from 'react-responsive';
 

@@ -16,7 +16,8 @@ const config: Config = {
         "gray-900": "#010A05"
       },
       screens: {
-        sm: "320px",
+        sx: "320px",
+        sm: "481px",
         md: "768px",
         lg: "1280px",
       },

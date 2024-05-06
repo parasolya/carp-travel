@@ -6,8 +6,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="box-border lg:h-screen mx-auto px-5 pt-28 pb-16 md:px-8 md:pb-16 pt-27 md:pt-36 lg:px-20 lg:pb-16  lg:pt-26 bg-cover bg-center"
-      style={{ backgroundImage: 'url(/bg-hero.png)' }}
+      className="box-border lg:h-screen mx-auto px-5 pt-28 pb-16 md:px-8 md:pb-16 pt-27 md:pt-36 lg:px-20 lg:pb-16  lg:pt-26 bg-cover bg-center bg-no-repeat bg-heroMob sm:bg-heroTab lg:bg-heroDesk"
     >
       <div className="w-full h-full flex flex-col">
         <div className="md:flex-grow relative md:h-1/3 mb-60 md:mb-10 lg:mb-20">
@@ -19,7 +18,10 @@ const Hero: React.FC = () => {
           <div className="w-full flex justify-end">
             <div className="w-3/7 md:w-1/3">
               <h2 className="font-medium text-[37px] md:text-7xl lg:text-[98px] leading-none uppercase">
-                7 <span className="font-thin md:tracking-tight lg:tracking-[0.11em]">DAYS</span>
+                7{' '}
+                <span className="font-thin md:tracking-tight lg:tracking-[0.11em]">
+                  DAYS
+                </span>
               </h2>
               <p className="-mt-1 font-thin tracking-[0.6em] md:tracking-[1.5em] lg:tracking-[2.5em] ">
                 JOURNEY

@@ -4,12 +4,10 @@ import FormContacts from '../../components/FormContacts';
 import Title from '../../components/Title';
 
 const ContactUs: React.FC = () => {
-
   return (
     <section
       id="contacts"
-      className="box-border md:h-screen mx-auto px-5 py-16 md:px-8 md:py-16 lg:px-20 lg:py-20 bg-cover bg-center"
-      style={{ backgroundImage: 'url(/bg-contact-us.png)' }}
+      className="box-border md:h-screen mx-auto px-5 py-16 md:px-8 md:py-16 lg:px-20 lg:py-20 bg-cover bg-center bg-no-repeat bg-contactMob sm:bg-contactTab lg:bg-contactDesk"
     >
       <div>
         <Title firstWords="Contact" secondWords="us" />
@@ -24,6 +22,6 @@ const ContactUs: React.FC = () => {
       </div>
     </section>
   );
-}
+};
 
 export default ContactUs;

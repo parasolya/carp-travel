@@ -42,10 +42,9 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
 
   return (
     <div
-      className="w-full md:w-2/3 lg:w-1/2 box-border px-5 py-16 md:px-0 md:py-0  md:mt-32 lg:mt-32 bg-cover bg-center"
-      style={{
-        backgroundImage: mobileScreen ? 'url(/bg-career.png)' : '',
-      }}
+      className={`w-full md:w-2/3 lg:w-1/2 box-border px-5 py-16 md:px-0 md:py-0  md:mt-32 lg:mt-32 bg-cover bg-center bg-no-repeat ${
+        mobileScreen ? 'bg-careerMob' : ''
+      }`}
     >
       <h2 className="hidden">Form</h2>
       <div className="flex justify-end md:justify-start">

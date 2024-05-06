@@ -18,8 +18,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="box-border md:h-screen mx-auto px-5 py-16 md:px-8 md:py-16 lg:px-20 lg:py-16  flex flex-col justify-center bg-cover bg-center"
-      style={{ backgroundImage: 'url(/bg-about.png)' }}
+      className="box-border md:h-screen mx-auto px-5 py-16 md:px-8 md:py-16 lg:px-20 lg:py-16  flex flex-col justify-center bg-cover bg-center bg-no-repeat bg-aboutMob sm:bg-aboutTab lg:bg-aboutDesk"
     >
       <div className="w-full h-full">
         <div className="md:flex justify-between md:mb-6 lg:mb-0">
@@ -41,7 +40,7 @@ const About: React.FC = () => {
             )}
           </div>
           <div className="md:w-1/3 lg:w-1/2 lg:mb-8 md:pl-10 lg:pl-0">
-            <div className='lg:w-1/2'>
+            <div className="lg:w-1/2">
               <p className="w-2/3 md:w-full mb-4 text-sm lg:text-base font-thin">
                 <span className="font-normal">a team of enthusiasts</span> who
                 are fully committed to the mission of creating unforgettable and
@@ -95,6 +94,6 @@ const About: React.FC = () => {
       </div>
     </section>
   );
-}
+};
 
 export default About;

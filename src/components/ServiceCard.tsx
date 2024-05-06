@@ -30,7 +30,7 @@ export default function Card2({ elementNumber }: ServiceCardProps) {
 
   return (
     <div
-      className="box-border h-full w-full px-5 py-16 md:px-8 md:py-16 lg:px-20 lg:py-20 bg-cover bg-center "
+      className="box-border h-full w-full px-5 py-16 md:px-8 md:py-16 lg:px-20 lg:py-20 bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${selectedService.backgroundImage})`,
       }}

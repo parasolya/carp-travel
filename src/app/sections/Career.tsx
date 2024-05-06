@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import FormChooseUs from '../../components/FormChooseUs';
-import WhyUs from './WhyUs';
+import WhyUs from '@/components/WhyUs';
 import advantages from '../../../shared/advantages';
 
 import { useMediaQuery } from 'react-responsive';
@@ -20,17 +20,15 @@ const Career: React.FC = () => {
   return (
     <section
       id="career"
-      className="md:h-screen md:px-8 md:py-16 lg:px-16 lg:py-16  bg-cover bg-center"
-      style={{
-        backgroundImage: !isMobile ? 'url(/bg-career.png)' : '',
-      }}
+      className={`md:h-screen md:px-8 md:py-16 lg:px-16 lg:py-16  bg-cover bg-center bg-no-repeat ${
+        isMobile ? '' : 'bg-careerTab lg:bg-careerDesk'
+      }`}
     >
       <div className="relative w-full h-full md:flex justify-between gap-5 lg:gap-0">
         <div
-          className="w-full md:w-1/3 lg:w-1/2   bg-cover bg-center"
-          style={{
-            backgroundImage: isMobile ? 'url(/bg-career.png)' : '',
-          }}
+          className={`w-full md:w-1/3 lg:w-1/2   bg-cover bg-center bg-no-repeat
+           ${isMobile ? 'bg-careerMob' : ''}
+           `}
         >
           <div className="w-full md:w-[300%] lg:w-[200%] lg:mr-20 md:flex justify-between px-5 pt-16 md:px-0 md:pt-0  lg:mb-8">
             <h1 className="w-full md:w-2/3 lg:w-3/4  mb-8 md:mb-0 font-thin text-5xl md:text-7xl lg:text-8xl tracking-tight leading-none uppercase">

@@ -63,7 +63,7 @@ const config: Config = {
         careerMob:
           'linear-gradient(to bottom, rgba(2, 15, 8, 0.75), rgba(2, 15, 8, 0.75)), image-set(url("/career/career_bg_mob.jpg") 1x, url("/career/career_bg_mob@2x.jpg") 2x)',
         careerTab:
-          'linear-gradient(to bottom, rgba(2, 15, 8, 0.75), rgba(2, 15, 8, 0.75), rgba(2, 15, 8, 0.75)), image-set(url("/career/career_bg_tab.jpg") 1x, url("/career/career_bg_tab@2x.jpg") 2x)',
+          'linear-gradient(to bottom, rgba(2, 15, 8, 0.75), rgba(2, 15, 8, 0.75)), image-set(url("/career/career_bg_tab.jpg") 1x, url("/career/career_bg_tab@2x.jpg") 2x)',
         careerDesk:
           'linear-gradient(to bottom, rgba(2, 15, 8, 0.75), rgba(2, 15, 8, 0.75)), image-set(url("/career/career_bg_desk.jpg") 1x, url("/career/career_bg_desk@2x.jpg") 2x)',
 
@@ -75,11 +75,11 @@ const config: Config = {
           'linear-gradient(to bottom, rgba(2, 15, 8, 0.85), rgba(2, 15, 8, 0.85)), image-set(url("/gallery/bg/gallery_bg_desk.jpg") 1x, url("/gallery/bg/gallery_bg_desk@2x.jpg") 2x)',
 
         contactMob:
-          'linear-gradient(to bottom, rgba(2, 15, 8, 0.75), rgba(2, 15, 8, 0.75)), image-set(url("/contactUs/contact_bg_mob.jpg") 1x, url("/contact/contact_bg_mob@2x.jpg") 2x)',
+          'linear-gradient(to bottom, rgba(2, 15, 8, 0.75), rgba(2, 15, 8, 0.75)), image-set(url("/contactUs/contact_bg_mob.jpg") 1x, url("/contactUs/contact_bg_mob@2x.jpg") 2x)',
         contactTab:
-          'linear-gradient(to bottom, rgba(2, 15, 8, 0.75), rgba(2, 15, 8, 0.75)), image-set(url("/contactUs/contact_bg_tab.jpg") 1x, url("/contact/contact_bg_tab@2x.jpg") 2x)',
+          'linear-gradient(to bottom, rgba(2, 15, 8, 0.75), rgba(2, 15, 8, 0.75)), image-set(url("/contactUs/contact_bg_tab.jpg") 1x, url("/contactUs/contact_bg_tab@2x.jpg") 2x)',
         contactDesk:
-          'linear-gradient(to bottom, rgba(2, 15, 8, 0.75), rgba(2, 15, 8, 0.75)), image-set(url("/contactUs/contact_bg_desk.jpg") 1x, url("/contact/contact_bg_desk@2x.jpg") 2x)',
+          'linear-gradient(to bottom, rgba(2, 15, 8, 0.75), rgba(2, 15, 8, 0.75)), image-set(url("/contactUs/contact_bg_desk.jpg") 1x, url("/contactUs/contact_bg_desk@2x.jpg") 2x)',
       },
 
       screens: {

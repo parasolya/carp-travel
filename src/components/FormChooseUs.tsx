@@ -11,17 +11,30 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
     handleSubmit,
     register,
     trigger,
-    watch,
     formState: { errors },
     reset,
   } = useForm();
 
   const [isChecked, setIsChecked] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [isMediumScreen, setIsMediumScreen] = useState(false);
 
-  const isMediumScreen = useMediaQuery({
-    query: '(min-width: 768px) and (max-width: 1279px)',
-  });
+  // const isMediumScreen = useMediaQuery({
+  //   query: '(min-width: 768px) and (max-width: 1279px)',
+  // });
+
+  useEffect(() => {   
+    const handleResize = () => {
+      setIsMediumScreen(window.innerWidth >= 768 && window.innerWidth <= 1279); 
+    };
+
+    handleResize();
+  
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleChange = () => {
     setIsChecked(!isChecked);
@@ -70,6 +83,7 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
                 errors.name ? 'text-primary' : ''
               }`}
                   id="name"
+                  autoComplete="name"
                   type="text"
                   placeholder="John Smith"
                   {...register('name', {
@@ -106,6 +120,7 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
                 </label>
                 <input
                   id="email"
+                  autoComplete="email"
                   className={`w-full bg-white bg-opacity-5 py-1 lg:py-0 pl-2 
                 Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-xl leading-6 focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer focus:outline-none hover:outline-none  hover:transition hover:duration-150 ease-in-out focus:transition focus:duration-150  ${
                   errors.name ? 'text-primary' : ''
@@ -141,6 +156,7 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
                 </label>
                 <input
                   id="position"
+                  autoComplete="position"
                   className="w-full bg-white bg-opacity-5 py-1 lg:py-0 pl-2 
               Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-xl leading-6 focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer focus:outline-none hover:outline-none  hover:transition hover:duration-150 ease-in-out focus:transition focus:duration-150"
                   type="text"
@@ -161,6 +177,7 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
                   </div>
                   <input
                     id="phone"
+                    autoComplete="phone"
                     className={`flex-1 py-1 lg:py-0 pl-2 Inter font-extralight md:text-xs lg:text-xl leading-6 placeholder-white placeholder-opacity-20 bg-white bg-opacity-5 focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer focus:outline-none hover:outline-none  hover:transition hover:duration-150 ease-in-out focus:transition focus:duration-150 ${
                       errors.phone ? 'text-primary' : ''
                     }`}
@@ -202,6 +219,7 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
               </label>
               <textarea
                 id="message"
+                autoComplete="message"
                 className="block resize-none w-full py-1 md:py-2 px-2 font-extralight text-xl leading-6 bg-white bg-opacity-5 focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer focus:outline-none hover:outline-none  hover:transition hover:duration-150 ease-in-out focus:transition focus:duration-150"
                 rows={isMediumScreen ? 8 : 9}
                 {...register('message')}

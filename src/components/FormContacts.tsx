@@ -55,6 +55,7 @@ const FormContacts = () => {
                     errors.name_form2 ? 'text-primary' : ''
                   }`}
                   id="name_form2"
+                  autoComplete="name_form2"
                   type="text" 
                   placeholder="John Smith"
                   {...register('name_form2', {
@@ -92,6 +93,7 @@ const FormContacts = () => {
                 </label>
                 <input
                   id="email_form2"
+                  autoComplete="email_form2"
                   className={`w-full bg-white bg-opacity-5 py-1 lg:py-0 pl-2 
                 Inter font-extralight placeholder-white placeholder-opacity-20 md:text-xs lg:text-lg leading-6 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer hover:transition hover:duration-150 ease-in-out focus:transition focus:duration-150  ${
                   errors.email_form2 ? 'text-primary' : ''
@@ -123,16 +125,17 @@ const FormContacts = () => {
 
             <div className="w-full md:w-2/3 lg:w-full">
               <label
-                htmlFor="message"
+                htmlFor="message_form2"
                 className="block font-thin text-xs tracking-widest tracking-6 mb-2"
               >
                 Message
               </label>
               <textarea
-                id="message"
+                id="message_form2"
+                autoComplete="message_form2"
                 className="block resize-none w-full py-1 px-2 font-extralight text-xl leading-6 bg-white bg-opacity-5 focus:outline-none focus:bg-opacity-10 hover:bg-opacity-10 cursor-pointer hover:transition hover:duration-150 ease-in-out focus:transition focus:duration-150"
                 rows={isMediumScreen ? 8 : 7}
-                {...register('message')}
+                {...register('message_form2')}
               ></textarea>
             </div>
           </div>

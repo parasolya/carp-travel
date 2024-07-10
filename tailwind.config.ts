@@ -7,11 +7,25 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      xs: '320px',
+      sm: '480px',
+      md: '768px',
+      lg: '1280px',
+    },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        xs: '1.25rem',
+        md: '2rem',
+        lg: '2.5rem',
+      },
+    },
+
     extend: {
       colors: {
-        'gray-500': '#1E1E1E',
         primary: '#FF5757',
-        'gray-700': '#020F08',
         'gray-900': '#010A05',
       },
       backgroundImage: {
@@ -81,13 +95,7 @@ const config: Config = {
         contactDesk:
           'linear-gradient(to bottom, rgba(2, 15, 8, 0.75), rgba(2, 15, 8, 0.75)), image-set(url("/contactUs/contact_bg_desk.jpg") 1x, url("/contactUs/contact_bg_desk@2x.jpg") 2x)',
       },
-
-      screens: {
-        sx: '320px',
-        sm: '481px',
-        md: '768px',
-        lg: '1280px',
-      },
+ 
       variants: {
         filter: ['responsive', 'hover', 'focus'],
       },

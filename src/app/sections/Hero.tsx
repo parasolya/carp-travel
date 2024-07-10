@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+
 import { Link } from 'react-scroll';
 
 const Hero: React.FC = () => {
@@ -9,26 +9,25 @@ const Hero: React.FC = () => {
       className="box-border lg:h-screen mx-auto px-5 pt-28 pb-16 md:px-8 md:pb-16 pt-27 md:pt-36 lg:px-20 lg:pb-16  lg:pt-26 bg-cover bg-center bg-no-repeat bg-heroMob sm:bg-heroTab lg:bg-heroDesk"
     >
       <div className="w-full h-full flex flex-col">
-        <div className="md:flex-grow relative md:h-1/3 mb-60 md:mb-10 lg:mb-20">
-          <div className="absolute top-20 md:-top-1 w-2/3 md:w-2/3">
-            <h1 className=" font-medium text-5xl md:text-[67px] lg:text-[98px] md:tracking-tight leading-tight tracking-tight uppercase">
+        <div className="w-full flex flex-col md:flex-wrap justify-end mb-60 md:mb-10 lg:mb-20">
+          <div className="md:order-2 w-full md:w-1/3 flex flex-col items-end ">
+            <h2 className="font-medium text-[37px] md:text-7xl lg:text-[98px] leading-none uppercase">
+              7{' '}
+              <span className="font-thin md:tracking-tight lg:tracking-[0.11em]">
+                DAYS
+              </span>
+            </h2>
+            <p className="-mt-1 font-thin tracking-[0.6em] md:tracking-[1.5em] lg:tracking-[2.5em] ">
+              JOURNEY
+            </p>
+          </div>
+          <div className="md:order-1 mt-20 md:-mt-1 w-2/3 md:w-2/3">
+            <h1 className="font-medium text-5xl md:text-[67px] lg:text-[98px] md:tracking-tight leading-tight tracking-tight uppercase">
               Uncover <span className="font-thin">Carpathian’s Secrets</span>
             </h1>
           </div>
-          <div className="w-full flex justify-end">
-            <div className="w-3/7 md:w-1/3">
-              <h2 className="font-medium text-[37px] md:text-7xl lg:text-[98px] leading-none uppercase">
-                7{' '}
-                <span className="font-thin md:tracking-tight lg:tracking-[0.11em]">
-                  DAYS
-                </span>
-              </h2>
-              <p className="-mt-1 font-thin tracking-[0.6em] md:tracking-[1.5em] lg:tracking-[2.5em] ">
-                JOURNEY
-              </p>
-            </div>
-          </div>
         </div>
+
         <div className="md:flex-grow flex flex-col gap-8 md:flex-row justify-between">
           <div className="w-2/3 md:w-1/3 md:flex flex-col justify-end lg:w-2/3">
             <p className="text-xs font-thin md:leading-5 lg:leading-6 md:tracking-widest">

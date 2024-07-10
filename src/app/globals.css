@@ -35,7 +35,6 @@ html,
 
 @layer components {
   .section {
-    @apply py-14 md:py-16 lg:py-26;
+    @apply py-14 md:py-16 lg:py-20;
   }
- 
 }

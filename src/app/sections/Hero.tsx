@@ -8,21 +8,21 @@ const Hero: React.FC = () => {
       id="hero"
       className="box-border lg:h-screen mx-auto px-5 pt-28 pb-16 md:px-8 md:pb-16 pt-27 md:pt-36 lg:px-20 lg:pb-16  lg:pt-26 bg-cover bg-center bg-no-repeat bg-heroMob sm:bg-heroTab lg:bg-heroDesk"
     >
-      <div className="w-full h-full flex flex-col">
-        <div className="w-full flex flex-col md:flex-row justify-end mb-60 md:mb-10 lg:mb-20">
-          <div className="order-2 md:order-1 mt-20 md:-mt-1 w-2/3 md:w-2/3">
+      <div className="w-full flex flex-col">
+        <div className="w-full flex flex-col md:flex-row justify-end mb-6 md:mb-0">
+          <div className="order-2 md:order-1 mt-6 md:-mt-1 w-2/3">
             <h1 className="font-medium text-5xl md:text-[67px] lg:text-[98px] md:tracking-tight leading-tight tracking-tight uppercase">
               Uncover <span className="font-thin">Carpathian’s Secrets</span>
             </h1>
           </div>
-          <div className="order-1 md:order-2 w-full md:w-1/3 flex flex-col items-end ">
+          <div className="order-1 md:order-2 w-full md:w-1/3 flex flex-col items-end  ">
             <h2 className="font-medium text-[37px] md:text-7xl lg:text-[98px] leading-none uppercase">
               7{' '}
               <span className="font-thin md:tracking-tight lg:tracking-[0.11em]">
                 DAYS
               </span>
             </h2>
-            <p className="-mt-1 font-thin tracking-[0.6em] md:tracking-[1.5em] lg:tracking-[2.5em] ">
+            <p className="font-thin tracking-[0.6em] md:tracking-[1.5em] lg:tracking-[2.3em] md:-mr-4">
               JOURNEY
             </p>
           </div>

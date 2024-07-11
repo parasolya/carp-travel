@@ -10,7 +10,7 @@ html,
 .app {
   color: white;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 20px;
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
@@ -19,7 +19,6 @@ html,
   #rood,
   .app {
     font-size: 16px;
-    line-height: 24px;
   }
 }
 
@@ -35,6 +34,6 @@ html,
 
 @layer components {
   .section {
-    @apply py-14 md:py-16 lg:py-26;
+    @apply py-[54px] md:py-16 lg:py-26;
   }
 }

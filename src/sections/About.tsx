@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import Title from '../../components/Title';
+import Title from '../components/Title';
 
 const About: React.FC = () => {
   const [isTablet, setIsTablet] = useState<boolean | null>(null);

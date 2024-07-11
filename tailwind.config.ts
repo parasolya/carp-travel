@@ -2,7 +2,7 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/sections/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
@@ -19,11 +19,13 @@ const config: Config = {
         DEFAULT: '1rem',
         xs: '1.25rem',
         md: '2rem',
-        lg: '2.5rem',
+        lg: '1.5rem',
       },
     },
-
     extend: {
+      spacing: {
+        '26': '5.8rem', 
+      },
       colors: {
         primary: '#FF5757',
         'gray-900': '#010A05',

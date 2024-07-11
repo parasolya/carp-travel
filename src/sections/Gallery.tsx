@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import GallerySlider from '@/components/GallerySlider';
-import Title from '../../components/Title';
-import GalleryList from '../../components/GalleryList';
-import gallery from '../../data/gallery.json';
+import Title from '../components/Title';
+import GalleryList from '../components/GalleryList';
+import gallery from '../data/gallery.json';
 
 const Gallery: React.FC = () => {
   const [isMobile, setIsMobile] = useState<boolean | null>(null);

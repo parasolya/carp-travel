@@ -1,6 +1,6 @@
 'use client'
 
-import Slider from '../../components/Slider';
+import Slider from '../components/Slider';
 
 function Services() {
   return (

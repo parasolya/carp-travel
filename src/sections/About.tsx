@@ -4,7 +4,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="section bg-cover bg-center bg-no-repeat bg-aboutMob sm:bg-aboutTab lg:bg-aboutDesk"
+      className="section bg-about"
     >
       <div className="container">
         <div className="md:flex justify-between lg:gap-[24px]">

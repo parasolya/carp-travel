@@ -3,6 +3,7 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useRef, useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import Button from './ui/Button';
 
 const FormContacts = () => {
   const {
@@ -56,7 +57,7 @@ const FormContacts = () => {
                   }`}
                   id="name_form2"
                   autoComplete="name_form2"
-                  type="text" 
+                  type="text"
                   placeholder="John Smith"
                   {...register('name_form2', {
                     required: {
@@ -139,16 +140,16 @@ const FormContacts = () => {
               ></textarea>
             </div>
           </div>
-          <div className="flex gap-4">
-            <div className="flex ml-auto mr-0">
-              <button
-                className="w-20 h-9 flex items-start justify-end font-medium text-4xl  md:text-3xl cursor-pointer outline-none shadow-none hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
+          
+            <div className="ml-auto mr-0">
+              <Button
+                variant="form"
                 type="submit"
               >
                 SEND
-              </button>
+              </Button>
             </div>
-          </div>
+         
         </div>
       </form>
 

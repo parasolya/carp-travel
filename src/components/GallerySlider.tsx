@@ -9,6 +9,7 @@ import { GallerySlide } from './GallerySlide';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+import Button from './ui/Button';
 
 function GallerySlider() {
   const swiperRef = useRef<any>(null);
@@ -42,22 +43,22 @@ function GallerySlider() {
         ))}
       </Swiper>
       <div className=" swiper-navigation flex justify-around items-center">
-        <button
-          className=" text-white font-thin text-2xl uppercase cursor-pointer outline-none shadow-none hover:font-extralight hover:underline hover:transition hover:duration-150 ease-in-out focus:font-extralight focus:underline focus:transition focus:duration-150"
+        <Button
+          variant="slider"
           onClick={() =>
             swiperRef.current && swiperRef.current.swiper.slidePrev()
           }
         >
           Back
-        </button>
-        <button
-          className=" text-white font-thin text-2xl uppercase cursor-pointer outline-none shadow-none hover:font-extralight hover:underline hover:transition hover:duration-150 ease-in-out focus:font-extralight focus:underline focus:transition focus:duration-150"
+        </Button>
+        <Button
+          variant="slider"
           onClick={() =>
             swiperRef.current && swiperRef.current.swiper.slideNext()
           }
         >
           Next
-        </button>
+        </Button>
       </div>
     </div>
   );

@@ -3,6 +3,8 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useRef, useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import Button from './ui/Button';
+
 
 const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
   mobileScreen,
@@ -23,13 +25,13 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
   //   query: '(min-width: 768px) and (max-width: 1279px)',
   // });
 
-  useEffect(() => {   
+  useEffect(() => {
     const handleResize = () => {
-      setIsMediumScreen(window.innerWidth >= 768 && window.innerWidth <= 1279); 
+      setIsMediumScreen(window.innerWidth >= 768 && window.innerWidth <= 1279);
     };
 
     handleResize();
-  
+
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -248,13 +250,10 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
                 I confirm my consent to the processing of personal data.
               </p>
             </div>
-            <div className="flex md:items-start justify-end ml-auto mr-0">
-              <button
-                className="md:w-20 md:h-9  text-4xl  md:text-3xl lg:text-3xl cursor-pointer outline-none shadow-none hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
-                type="submit"
-              >
+            <div className="ml-auto mr-0">
+              <Button variant="form" type="submit">
                 SEND
-              </button>
+              </Button>
             </div>
           </div>
         </div>

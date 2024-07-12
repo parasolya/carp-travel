@@ -1,6 +1,7 @@
 'use client';
 
-import { Link } from 'react-scroll';
+import LinkButton from '@/components/ui/LinkButton';
+import { heroData } from '@/data';
 
 const Hero: React.FC = () => {
   return (
@@ -44,32 +45,13 @@ const Hero: React.FC = () => {
               the best service!
             </p>
 
-            <Link
-              className="cursor-pointer"
-              activeClass="active"
+            <LinkButton
+              className="w-full md:w-[230px] lg:w-[293px] font-bold text-lg lg:text-xl uppercase"
+              variant="main"
               to="contacts"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={500}
             >
-              <div className="relative w-full h-[53px] md:h-[50px] lg:h-[71px] flex bg-white bg-opacity-10 focus:bg-opacity-20 hover:bg-opacity-20 hover:transition hover:duration-150 ease-in-out focus:transition focus:duration-150">
-                <div className="box-border h-full w-1/6 ">
-                  <div className="h-1/6 border-t border-l border-white"></div>
-                  <div className="h-4/6"></div>
-                  <div className="h-1/6 border-b border-l border-white"></div>
-                </div>
-                <div className="h-full w-4/6"></div>
-                <div className="h-full w-1/6 ">
-                  <div className="h-1/6 border-t border-r border-white"></div>
-                  <div className="h-4/6"></div>
-                  <div className="h-1/6 border-b border-r border-white"></div>
-                </div>
-                <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-xl uppercase">
-                  Join NOW
-                </p>
-              </div>
-            </Link>
+              {heroData.textButton}
+            </LinkButton>
           </div>
         </div>
       </div>

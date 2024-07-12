@@ -24,11 +24,19 @@ const config: Config = {
     },
     extend: {
       spacing: {
-        '26': '5.8rem', 
+        '26': '5.8rem',
       },
       colors: {
         primary: '#FF5757',
         'gray-900': '#010A05',
+      },
+      content: {
+        iconBeforeLg: 'url("/icons/before-lg.svg")',
+        iconBeforeMd: 'url("/icons/before-md.svg")',
+        iconBeforeSm: 'url("/icons/before-sm.svg")',
+        iconAfterLg: 'url("/icons/before-lg.svg")',
+        iconAfterMd: 'url("/icons/before-md.svg")',
+        iconAfterSm: 'url("/icons/before-sm.svg")',
       },
       backgroundImage: {
         heroMob:
@@ -97,7 +105,7 @@ const config: Config = {
         contactDesk:
           'linear-gradient(to bottom, rgba(2, 15, 8, 0.75), rgba(2, 15, 8, 0.75)), image-set(url("/contactUs/contact_bg_desk.jpg") 1x, url("/contactUs/contact_bg_desk@2x.jpg") 2x)',
       },
- 
+
       variants: {
         filter: ['responsive', 'hover', 'focus'],
       },

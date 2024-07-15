@@ -13,3 +13,15 @@ export interface LinkButtonProp
   to: string;
   className?: string;
 }
+
+export interface PhoneNumberProp {
+  phone: string;
+}
+
+export interface EmailProp {
+  mail: string;
+}
+
+export interface SocialProp {
+  social: string;
+}

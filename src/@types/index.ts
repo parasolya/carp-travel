@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, HTMLProps } from 'react';
 
 export interface ButtonProp extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'slider' | 'form';
@@ -28,7 +28,7 @@ export interface SocialProp {
 
 import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
 
-export interface InputProp {
+export interface InputProps extends HTMLProps<HTMLInputElement> {
   id: string;
   label?: string;
   placeholder?: string;
@@ -38,7 +38,6 @@ export interface InputProp {
   classNameLabel?: string;
   checked?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  register: UseFormRegister<FieldValues>;
 }
 
 export interface CheckboxtProp {
@@ -51,7 +50,7 @@ export interface CheckboxtProp {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export interface TextareaProp {
+export interface TextareaProps {
   id: string;
   label?: string;
   placeholder?: string;
@@ -59,5 +58,4 @@ export interface TextareaProp {
   className?: string;
   classNameLabel?: string;
   rows?: number;
-  register: UseFormRegister<FieldValues>;
 }

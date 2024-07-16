@@ -1,21 +1,24 @@
-import { InputProp } from '@/@types';
+import React, { forwardRef } from 'react';
+import { InputProps } from '@/@types';
 
-const Input: React.FC<InputProp> = ({
-  id,
-  label,
-  placeholder,
-  type,
-  errors,
-  className,
-  classNameLabel,
-  register,
-  ...rest
-}) => {
+const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
+  {
+    id,
+    label,
+    placeholder,
+    type,
+    errors,
+    className,
+    classNameLabel,
+    ...rest
+  },
+  ref
+) => {
   return (
     <div className="relative">
       <label
         htmlFor={id}
-        className={`block font-thin text-[12px] md:text-xs leading-6  tracking-widest mb-1 lg:mb-2 ${classNameLabel}`}
+        className={`block font-thin text-[12px] md:text-xs leading-6 tracking-widest mb-1 lg:mb-2 ${classNameLabel}`}
       >
         {label}
       </label>
@@ -33,7 +36,7 @@ const Input: React.FC<InputProp> = ({
           autoComplete={id}
           type={type}
           placeholder={placeholder}
-          {...register(id)}
+          ref={ref} 
           {...rest}
         />
       </div>
@@ -49,4 +52,4 @@ const Input: React.FC<InputProp> = ({
   );
 };
 
-export default Input;
+export default forwardRef(Input);

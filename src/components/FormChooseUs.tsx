@@ -89,7 +89,6 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
                     message: '❌ Incorrect name',
                   },
                 })}
-                register={register}
               />
 
               <Input
@@ -108,7 +107,6 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
                     message: '❌ Incorrect email',
                   },
                 })}
-                register={register}
               />
 
               <Input
@@ -118,7 +116,6 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
                 placeholder="Movie maker"
                 errors={errors}
                 {...register('position')}
-                register={register}
               />
 
               <Input
@@ -141,7 +138,6 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
                     message: '❌ Incorrect phone',
                   },
                 })}
-                register={register}
               />
             </div>
 
@@ -152,7 +148,6 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
                 className="block resize-none py-1 md:py-2 px-2"
                 rows={isMediumScreen ? 8 : 9}
                 {...register('message')}
-                register={register}
               />
             </div>
           </div>

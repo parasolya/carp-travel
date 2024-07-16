@@ -1,6 +1,7 @@
-import { TextareaProp } from '@/@types';
+import { TextareaProps } from '@/@types';
+import { forwardRef } from 'react';
 
-const Textarea: React.FC<TextareaProp> = ({
+const Textarea: React.ForwardRefRenderFunction<HTMLTextAreaElement, TextareaProps> = ({
   id,
   label,
   placeholder,
@@ -8,9 +9,9 @@ const Textarea: React.FC<TextareaProp> = ({
   className,
   classNameLabel,
   rows,
-  register,
   ...rest
-}) => {
+},
+ref) => {
   return (
     <>
       <label
@@ -25,11 +26,10 @@ const Textarea: React.FC<TextareaProp> = ({
         autoComplete={id}
         placeholder={placeholder}
         rows={rows}
-        {...register(id)}
         {...rest}
       ></textarea>
     </>
   );
 };
 
-export default Textarea;
+export default forwardRef(Textarea);

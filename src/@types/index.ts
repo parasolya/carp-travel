@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, HTMLProps } from 'react';
 
 export interface ButtonProp extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'slider' | 'form';
@@ -24,4 +24,42 @@ export interface EmailProp {
 
 export interface SocialProp {
   social: string;
+}
+
+import { FieldError, FieldErrors, FieldValues } from 'react-hook-form';
+
+type FieldErrorsToRecord<T> = {
+  [K in keyof T]: T[K] extends FieldErrors<any> ? Record<string, FieldError | undefined> : T[K];
+};
+
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  id: string;
+  label?: string;
+  placeholder?: string;
+  type: string;
+  errors: FieldErrorsToRecord<FieldValues>; 
+  className?: string;
+  classNameLabel?: string;
+  checked?: boolean;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export interface CheckboxtProp {
+  id: string;
+  label?: string;
+  type: string;
+  className?: string;
+  classNameLabel?: string;
+  checked?: boolean;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export interface TextareaProps {
+  id: string;
+  label?: string;
+  placeholder?: string;
+  type?: string;
+  className?: string;
+  classNameLabel?: string;
+  rows?: number;
 }

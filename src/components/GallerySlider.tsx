@@ -29,6 +29,7 @@ function GallerySlider() {
         ref={swiperRef}
         wrapperTag="ul"
         className="gallery h-[609px] md:h-[294px] lg:h-[429px]"
+        speed={800}
       >
         {gallery.slides.map(({ img, alt }) => (
           <SwiperSlide

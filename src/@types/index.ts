@@ -61,5 +61,4 @@ export interface TextareaProps {
   type?: string;
   className?: string;
   classNameLabel?: string;
-  rows?: number;
 }

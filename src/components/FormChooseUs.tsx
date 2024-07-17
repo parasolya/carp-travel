@@ -20,20 +20,6 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
 
   const [isChecked, setIsChecked] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [isMediumScreen, setIsMediumScreen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMediumScreen(window.innerWidth >= 768 && window.innerWidth <= 1279);
-    };
-
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   const handleChange = () => {
     setIsChecked(!isChecked);
@@ -145,8 +131,7 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
               <Textarea
                 id="message"
                 label="Message"
-                className="block resize-none py-1 md:py-2 px-2"
-                rows={isMediumScreen ? 8 : 9}
+                className="block resize-none py-1 md:py-2 px-2 h-[196px] md:h-[204px] lg:h-[260px]"
                 {...register('message')}
               />
             </div>

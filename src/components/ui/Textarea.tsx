@@ -8,7 +8,6 @@ const Textarea: React.ForwardRefRenderFunction<HTMLTextAreaElement, TextareaProp
   type,
   className,
   classNameLabel,
-  rows,
   ...rest
 },
 ref) => {
@@ -25,7 +24,6 @@ ref) => {
         id={id}
         autoComplete={id}
         placeholder={placeholder}
-        rows={rows}
         {...rest}
       ></textarea>
     </>

@@ -9,7 +9,7 @@ interface Advantage {
 
 function WhyUs({ array }: { array: Advantage[] }) {
   return (
-    <div className="lg:h-full mt-10 md:mt-0 box-border px-5 pt-0 pb-16 md:px-0 md:pt-0 md:pb-0 lg:mr-4">
+    <div className="mb-16  md:mb-0 lg:mr-4">
       <h2 className="lg:w-1/2 text-end font-extralight text-4xl md:text-xl lg:text-4xl uppercase md:mb-6 lg:mb-10">
         Why us ?
       </h2>

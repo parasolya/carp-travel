@@ -18,7 +18,7 @@ const Slider: React.FC<Count> = ({ count }) => {
   const numbers = Array.from({ length: count }, (_, index) => index + 1);
 
   return (
-    <div className="h-full w-full">
+    <div className="w-full">
       <Swiper
         effect={'fade'}
         freeMode={true}
@@ -26,7 +26,7 @@ const Slider: React.FC<Count> = ({ count }) => {
         className="mySwiper h-full w-full box-border"
       >
         {numbers.map((number, index) => (
-          <SwiperSlide key={nanoid()} className="h-full w-full">
+          <SwiperSlide key={nanoid()} className="w-full">
             <ServiceCard key={nanoid()} elementNumber={index} />
           </SwiperSlide>
         ))}

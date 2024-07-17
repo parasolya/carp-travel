@@ -1,9 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import services from '../../shared/services';
-import Title from './Title';
 
 interface ServiceCardProps {
   elementNumber: number;
@@ -30,12 +29,13 @@ export default function Card2({ elementNumber }: ServiceCardProps) {
 
   return (
     <div
-      className="box-border h-full w-full px-5 py-16 md:px-8 md:py-16 lg:px-20 lg:py-20 bg-cover bg-center bg-no-repeat"
+      className="section bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${selectedService.backgroundImage})`,
       }}
     >
-      <div className="w-full md:flex items-center md:mb-8 lg:mb-4">
+      <div className='container'>
+      <div className="md:flex items-center md:mb-8 lg:mb-4">
         <h2 className="md:w-2/3 lg:w-1/2 mb-4 md:mb-0 font-thin text-4xl md:text-7xl lg:text-8xl tracking-tight leading-none md:leading-[80px] lg:leading-[110px] uppercase">
           WE <span className="font-medium">OFFER</span>
         </h2>
@@ -58,7 +58,7 @@ export default function Card2({ elementNumber }: ServiceCardProps) {
             <div className="swiper-pagination w-full flex h-full flex-col gap-1 md:gap-0 lg:gap-6">
               {offers.map((offer, index) => (
                 <div
-                  key={nanoid()}
+                  key={index}
                   className="lg:flex lg:items-center lg:justify-between"
                 >
                   <div
@@ -103,6 +103,7 @@ export default function Card2({ elementNumber }: ServiceCardProps) {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

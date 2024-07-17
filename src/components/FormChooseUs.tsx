@@ -8,9 +8,7 @@ import Textarea from './ui/Textarea';
 import Checkbox from './ui/Checkbox';
 import SuccessMessageModal from './SuccessMessageModal';
 
-const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
-  mobileScreen,
-}) => {
+const FormChooseUs = () => {
   const {
     handleSubmit,
     register,
@@ -40,14 +38,10 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
   };
 
   return (
-    <div
-      className={`w-full md:w-2/3 lg:w-1/2 box-border px-5 py-16 md:px-0 md:py-0  md:mt-32 lg:mt-32 bg-cover bg-center bg-no-repeat ${
-        mobileScreen ? 'bg-careerMob' : ''
-      }`}
-    >
+    <div className="w-full md:w-2/3 lg:w-1/2  md:mt-32 lg:mt-32">
       <h2 className="hidden">Form</h2>
       <div className="flex justify-end md:justify-start">
-        <h3 className=" w-3/5 md:w-1/2 text-[13px] lg:text-base font-thin  pr-2 lg:mt-0 md:pr-12 mb-8 lg:mb-3 leading-[20px] lg:leading-[24px]">
+        <h3 className=" w-3/5 md:w-1/2 text-[13px] lg:text-base font-thin lg:mt-0 md:pr-12 mb-8 lg:mb-3 leading-[20px] lg:leading-[24px]">
           Don't miss your opportunity! <br /> Fill out the form right now and
           join our team!
         </h3>
@@ -138,7 +132,7 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
             </div>
           </div>
           <div className="md:flex gap-4">
-            <div className="md:w-1/2 lg:w-full mb-4 md:mb-0 flex gap-2 lg:mt-2 ">
+            <div className="md:w-1/2 lg:w-full mb-4 md:mb-0 flex gap-2 items-center">
               <Checkbox
                 id="checkbox"
                 type="checkbox"

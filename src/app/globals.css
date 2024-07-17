@@ -36,9 +36,6 @@ html,
   .section {
     @apply py-[54px] md:py-16 lg:py-26;
   }
-  .bg-about {
-    @apply bg-cover bg-center bg-no-repeat bg-aboutMob sm:bg-aboutTab lg:bg-aboutDesk;
-  }
 }
 
 @layer utilities {

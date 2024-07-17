@@ -1,22 +1,8 @@
-'use client';
-import React, { useEffect, useState } from 'react';
 import FormChooseUs from '../components/FormChooseUs';
 import WhyUs from '@/components/WhyUs';
 import advantages from '../../shared/advantages';
 
-import { useMediaQuery } from 'react-responsive';
-
-const Career: React.FC = () => {
-  const [isMobile, setIsMobile] = useState<boolean | null>(null);
-
-  const isMobileScreen = useMediaQuery({
-    query: '(max-width: 767px)',
-  });
-
-  useEffect(() => {
-    setIsMobile(isMobileScreen);
-  }, [isMobileScreen]);
-
+const Career = () => {
   return (
     <section
       id="career"

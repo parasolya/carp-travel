@@ -1,11 +1,12 @@
 'use client';
 
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Button from './ui/Button';
 import Input from './ui/Input';
 import Textarea from './ui/Textarea';
 import Checkbox from './ui/Checkbox';
+import SuccessMessageModal from './SuccessMessageModal';
 
 const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
   mobileScreen,
@@ -160,20 +161,7 @@ const FormChooseUs: React.FC<{ mobileScreen: boolean | null }> = ({
         </div>
       </form>
 
-      {showSuccessMessage && (
-        <div className="relative inset-0 flex items-center justify-center">
-          <div
-            className="w-1/2 md:w-1/3 absolute bottom-14 flex items-center justify-center bg-cover bg-center"
-            style={{
-              backgroundImage: 'url(/bg-hero.png)',
-            }}
-          >
-            <p className="py-8 md:py-12 ml:py-24 text-2xl font-thin">
-              Successfull!
-            </p>
-          </div>
-        </div>
-      )}
+      {showSuccessMessage && <SuccessMessageModal />}
     </div>
   );
 };

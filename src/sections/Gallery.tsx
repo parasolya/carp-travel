@@ -21,8 +21,9 @@ const Gallery: React.FC = () => {
   return (
     <section
       id="gallery"
-      className="box-border md:h-screen mx-auto px-5 py-16 md:px-8 md:pt-32 md:pb-16 lg:px-0 lg:py-16 bg-cover bg-center bg-no-repeat bg-galleryMob sm:bg-galleryTab lg:bg-galleryDesk"
+      className="section bg-cover bg-center bg-no-repeat bg-galleryMob sm:bg-galleryTab lg:bg-galleryDesk"
     >
+      <div className="container">
       <div className="max-w-[480px] md:max-w-[768px] lg:max-w-[1280px] mx-auto">
         <div className="flex justify-start md:justify-center lg:justify-start mb-8 md:mb-20 lg:mb-8">
           <Title
@@ -32,6 +33,7 @@ const Gallery: React.FC = () => {
         </div>
 
         {isMobile ? <GalleryList /> : <GallerySlider />}
+      </div>
       </div>
     </section>
   );

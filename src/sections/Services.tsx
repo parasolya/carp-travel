@@ -4,7 +4,7 @@ import Slider from '../components/Slider';
 
 function Services() {
   return (
-    <section id="services" className="md:h-screen box-border">
+    <section id="services" className="">
       <h1 className="hidden">Services</h1>
       <Slider count={5} />  
     </section>

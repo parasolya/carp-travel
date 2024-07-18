@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "to": "about",
+    "section": "About"
+  },
+  {
+    "id": 2,
+    "to": "services",
+    "section": "Services"
+  },
+  {
+    "id": 3,
+    "to": "career",
+    "section": "Career"
+  },
+  {
+    "id": 4,
+    "to": "gallery",
+    "section": "Gallery"
+  },
+  {
+    "id": 5,
+    "to": "contacts",
+    "section": "Contacts"
+  }
+]

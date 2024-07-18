@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Header from './Header';
+import Header from '../sections/Header';
 
 import { metaData } from '../data';
 
@@ -37,9 +37,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">   
-      <body className={inter.className}>
+      <body className={inter.className }>
         <Header />
-        <main className="mx-auto border  w-full lg:max-w-7xl">{children}</main>
+        <main className="">{children}</main>
       </body>
     </html>
   );

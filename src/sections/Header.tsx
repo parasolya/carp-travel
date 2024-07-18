@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
-import Logo from '../components/Logo';
+import Logo from '../components/ui/Logo';
+import NavMenu from '@/components/NavMenu';
 
 const Header: React.FC = () => {
-
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
   const [isMenuToggled, setIsMenuToggled] = useState(false);
 
@@ -40,86 +40,12 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="relative">
+      <header className="absolute left-0 top-6 z-20 w-full bg-transparent">
         {!isMobileMenuVisible && (
-          <div className="absolute w-full flex justify-between box-border mx-auto px-8 pt-6 lg:px-20">
-            <Link
-              className="outline-none shadow-none cursor-pointer"
-              activeClass="active"
-              to="hero"
-              spy={true}
-              smooth={true}
-              offset={0}
-              duration={500} 
-              tabIndex={0}
-            >
-              <Logo />
-            </Link>
+          <div className="container flex justify-between items-center">
+            <Logo />
 
-            <nav className="flex items-end lg:items-center justify-between gap-6 lg:gap-8">
-              <Link
-              className="outline-none shadow-none cursor-pointer  hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
-                activeClass="active"
-                to="about"
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={500} 
-                tabIndex={0}
-                
-              >
-                About
-              </Link>
-              <Link
-                className="cursor-pointer outline-none shadow-none hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
-                activeClass="active"
-                to="services"
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={500} 
-                tabIndex={0}
-              
-              >
-                Services
-              </Link>
-              <Link
-                className="cursor-pointer outline-none shadow-none hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
-                activeClass="active"
-                to="career"
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={500} 
-                tabIndex={0}
-              >
-                Career
-              </Link>
-              <Link
-                className="cursor-pointer outline-none shadow-none hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
-                activeClass="active"
-                to="gallery"
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={500} 
-                tabIndex={0}
-              >
-                Gallery
-              </Link>
-              <Link
-                className="cursor-pointer outline-none shadow-none hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
-                activeClass="active"
-                to="contacts"
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={500} 
-                tabIndex={0}
-              >
-                Contacts
-              </Link>
-            </nav>
+            <NavMenu />
           </div>
         )}
 
@@ -141,7 +67,7 @@ const Header: React.FC = () => {
                 spy={true}
                 smooth={true}
                 offset={0}
-                duration={500} 
+                duration={500}
                 tabIndex={0}
               >
                 <Logo />
@@ -151,7 +77,7 @@ const Header: React.FC = () => {
                 <div>
                   <button
                     className="pointer-events-auto uppercase hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
-                    type='button'
+                    type="button"
                     onClick={() => setIsMenuToggled(!isMenuToggled)}
                   >
                     menu
@@ -177,7 +103,7 @@ const Header: React.FC = () => {
                 <div>
                   <button
                     className="pointer-events-auto uppercase hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150"
-                    type='button'
+                    type="button"
                     onClick={() => setIsMenuToggled(!isMenuToggled)}
                   >
                     CLOSE
@@ -200,7 +126,7 @@ const Header: React.FC = () => {
                   spy={true}
                   smooth={true}
                   offset={0}
-                  duration={500} 
+                  duration={500}
                   tabIndex={0}
                   onClick={() => setIsMenuToggled(!isMenuToggled)}
                 >
@@ -213,7 +139,7 @@ const Header: React.FC = () => {
                   spy={true}
                   smooth={true}
                   offset={0}
-                  duration={500} 
+                  duration={500}
                   tabIndex={0}
                   onClick={() => setIsMenuToggled(!isMenuToggled)}
                 >
@@ -226,7 +152,7 @@ const Header: React.FC = () => {
                   spy={true}
                   smooth={true}
                   offset={0}
-                  duration={500} 
+                  duration={500}
                   tabIndex={0}
                   onClick={() => setIsMenuToggled(!isMenuToggled)}
                 >
@@ -239,7 +165,7 @@ const Header: React.FC = () => {
                   spy={true}
                   smooth={true}
                   offset={0}
-                  duration={500} 
+                  duration={500}
                   tabIndex={0}
                   onClick={() => setIsMenuToggled(!isMenuToggled)}
                 >
@@ -252,7 +178,7 @@ const Header: React.FC = () => {
                   spy={true}
                   smooth={true}
                   offset={0}
-                  duration={500} 
+                  duration={500}
                   tabIndex={0}
                   onClick={() => setIsMenuToggled(!isMenuToggled)}
                 >

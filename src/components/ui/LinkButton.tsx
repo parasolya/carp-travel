@@ -7,6 +7,7 @@ const LinkButton: React.FC<LinkButtonProp> = ({
   to,
   children,
   className,
+  handleMenuToggled
 }) => {
   const elementBefore =
     'before:absolute before:left-0 before:z-10 before:block before:w-[35px] before:h-[50px] before:content-[url("/icons/before-sm.svg")] md:before:w-[42px]  md:before:h-[53px] md:before:content-[url("/icons/before-md.svg")] lg:before:w-[44px]  lg:before:h-[71px] lg:before:content-[url("/icons/before-lg.svg")]';
@@ -28,6 +29,8 @@ const LinkButton: React.FC<LinkButtonProp> = ({
       smooth={true}
       offset={0}
       duration={500}
+      tabIndex={0}
+      onClick={handleMenuToggled}
     >
       {children}
     </Link>

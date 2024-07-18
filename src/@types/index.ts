@@ -1,4 +1,12 @@
-import { AnchorHTMLAttributes, ButtonHTMLAttributes, HTMLProps } from 'react';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+
+export interface NavMenyProps {
+  className: string;
+}
+
+export interface NavModalProps {
+  handleMenuToggled: () => void;
+}
 
 export interface ButtonProp extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'slider' | 'form';
@@ -12,6 +20,7 @@ export interface LinkButtonProp
   children: React.ReactNode;
   to: string;
   className?: string;
+  handleMenuToggled?: () => void;
 }
 
 export interface PhoneNumberProp {

@@ -11,26 +11,21 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
     <div
       id="navbar"
       className={clsx(
-        'w-full h-screen absolute top-0 left-1/2 transform -translate-x-1/2 z-30  box-border pt-8 px-5 bg-gray-900 bg-opacity-90',
+        'w-full h-screen container absolute -top-9 left-1/2 transform -translate-x-1/2 z-30   bg-gray-900 bg-opacity-90',
         className
       )}
     >
       <div
-        className="w-full flex justify-end items-center"
-        onClick={handleMenuToggled}
+        className="w-full mt-[39px] flex justify-end items-center"
       >
-        <div>
-          <div>
-            <Button className="" type="button" onClick={handleMenuToggled}>
-              CLOSE
-            </Button>
-          </div>
-        </div>
+        <Button className="" type="button" onClick={handleMenuToggled}>
+          CLOSE
+        </Button>
       </div>
 
       <NavMenu
         classNameList="h-full w-full flex flex-col items-center text-center gap-12 pt-32"
-        classNameLink='text-xl'
+        classNameLink="text-xl"
         onMenuToggled={handleMenuToggled}
       />
     </div>
@@ -38,5 +33,3 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
 };
 
 export default BurgerMenu;
-
-

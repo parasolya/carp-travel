@@ -49,7 +49,7 @@ const Header = () => {
         </div>
 
         {isMenuToggled && (
-          <BurgerMenu className="-top-9" handleMenuToggled={onMenuToggled} />
+          <BurgerMenu className="" handleMenuToggled={onMenuToggled} />
         )}
       </header>
     </>

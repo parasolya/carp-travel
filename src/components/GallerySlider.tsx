@@ -43,7 +43,7 @@ function GallerySlider() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className=" swiper-navigation flex justify-around items-center">
+      <div className=" swiper-navigation flex justify-around items-center  lg:gap-[400px]">
         <Button
           variant="slider"
           onClick={() =>

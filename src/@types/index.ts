@@ -1,15 +1,19 @@
 import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 
 export interface NavMenyProps {
+  className?: string;
+  classNameList?: string;
+  classNameLink?: string;
+  onMenuToggled?: () => void;
+}
+
+export interface BurgerMenuProps {
+  handleMenuToggled: () => void;
   className: string;
 }
 
-export interface NavModalProps {
-  handleMenuToggled: () => void;
-}
-
 export interface ButtonProp extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'slider' | 'form';
+  variant?: 'slider' | 'text';
   children: string;
   className?: string;
 }

@@ -1,10 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Link } from 'react-scroll';
 import Logo from '../components/ui/Logo';
 import NavMenu from '@/components/NavMenu';
-import { NavModal } from '@/components/NavModal';
+import BurgerMenu from '@/components/BurgerMenu';
+import Button from '@/components/ui/Button';
 
 const Header = () => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
@@ -38,18 +38,19 @@ const Header = () => {
 
           {!isMenuToggled && (
             <div id="navbar" className="md:hidden">
-              <button
-                className="pointer-events-auto uppercase hover:underline transition"
+              <Button
                 type="button"
                 onClick={() => setIsMenuToggled(!isMenuToggled)}
               >
                 menu
-              </button>
+              </Button>
             </div>
           )}
         </div>
 
-        {isMenuToggled && <NavModal handleMenuToggled={onMenuToggled} />}
+        {isMenuToggled && (
+          <BurgerMenu className="-top-9" handleMenuToggled={onMenuToggled} />
+        )}
       </header>
     </>
   );

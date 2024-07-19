@@ -1,15 +1,16 @@
 import { NavMenyProps } from '@/@types';
 import { navData } from '@/data';
+import clsx from 'clsx';
 import { Link } from 'react-scroll';
 
-const NavMenu: React.FC<NavMenyProps> = ({ className }) => {
+const NavMenu: React.FC<NavMenyProps> = ({ className, classNameList, classNameLink, onMenuToggled }) => {
   return (
-    <nav className={className}>
-      <ul className="flex items-end lg:items-center justify-between gap-6 lg:gap-8">
+    <nav className={className} onClick={onMenuToggled}>
+      <ul className={clsx('flex items-end lg:items-center justify-between gap-6 lg:gap-8', classNameList)}>
         {navData.map(({ id, to, section }) => (
           <li key={id}>
             <Link
-              className='outline-none shadow-none cursor-pointer  hover:underline hover:transition hover:duration-150 ease-in-out focus:underline focus:transition focus:duration-150'
+              className={clsx('outline-none shadow-none cursor-pointer  hover:underline focus:underline transition', classNameLink)}
               activeClass="active"
               to={to}
               spy={true}
@@ -17,6 +18,7 @@ const NavMenu: React.FC<NavMenyProps> = ({ className }) => {
               offset={0}
               duration={500}
               tabIndex={0}
+              onClick={onMenuToggled}
             >
               {section}
             </Link>

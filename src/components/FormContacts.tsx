@@ -97,7 +97,7 @@ const FormContacts = () => {
           </div>
 
           <div className="ml-auto mr-0">
-            <Button variant="form" type="submit">
+            <Button variant="text" type="submit">
               SEND
             </Button>
           </div>

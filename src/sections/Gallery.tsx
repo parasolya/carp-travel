@@ -23,9 +23,8 @@ const Gallery: React.FC = () => {
       id="gallery"
       className="section bg-cover bg-center bg-no-repeat bg-galleryMob sm:bg-galleryTab lg:bg-galleryDesk"
     >
-      <div className="container">
-      <div className="max-w-[480px] md:max-w-[768px] lg:max-w-[1280px] mx-auto">
-        <div className="flex justify-start md:justify-center lg:justify-start mb-8 md:mb-20 lg:mb-8">
+      <div className="container lg:px-0">
+        <div className="lg:container flex justify-start md:justify-center lg:justify-start mb-8 md:mb-20 lg:mb-8">
           <Title
             firstWords={gallery.title.firstWords}
             secondWords={gallery.title.secondWords}
@@ -33,7 +32,6 @@ const Gallery: React.FC = () => {
         </div>
 
         {isMobile ? <GalleryList /> : <GallerySlider />}
-      </div>
       </div>
     </section>
   );

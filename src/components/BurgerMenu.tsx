@@ -11,13 +11,11 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({
     <div
       id="navbar"
       className={clsx(
-        'w-full h-screen container absolute -top-9 left-1/2 transform -translate-x-1/2 z-30   bg-gray-900 bg-opacity-90',
+        'w-screen h-screen absolute -top-9 z-30 bg-gray-900 bg-opacity-90',
         className
       )}
     >
-      <div
-        className="w-full mt-[39px] flex justify-end items-center"
-      >
+      <div className="w-full container mt-[39px] flex justify-end items-center">
         <Button className="" type="button" onClick={handleMenuToggled}>
           CLOSE
         </Button>
